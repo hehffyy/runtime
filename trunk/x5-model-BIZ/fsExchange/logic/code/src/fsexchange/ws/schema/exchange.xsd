@@ -1,0 +1,1739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		edited with XMLSpy v2010 rel. 3 (http://www.altova.com) by MESMERiZE
+		(MSM)
+	-->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+	<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="cooperation">
+		<xs:annotation>
+			<xs:documentation>根节点</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="application">
+					<xs:annotation>
+						<xs:documentation>申请人信息</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="id">
+								<xs:annotation>
+									<xs:documentation>申请人ID（在网上审批大厅自动生成）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="10" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="appid">
+								<xs:annotation>
+									<xs:documentation>申请人信息ID（申请人在网上审批大厅注册的用户ID）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="10" />
+										<xs:maxLength value="50" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="appname">
+								<xs:annotation>
+									<xs:documentation>申请人姓名</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="200" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="apporg">
+								<xs:annotation>
+									<xs:documentation>申请单位姓名</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="200" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cardid">
+								<xs:annotation>
+									<xs:documentation>申请人身份证号</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="appdate">
+								<xs:annotation>
+									<xs:documentation>申请时间</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:dateTime" />
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="mobilephone">
+								<xs:annotation>
+									<xs:documentation>申请人手机号码</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="11" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="phone">
+								<xs:annotation>
+									<xs:documentation>申请人固定电话</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="13" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="email">
+								<xs:annotation>
+									<xs:documentation>申请人邮箱</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="50" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="address">
+								<xs:annotation>
+									<xs:documentation>申请人地址</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="500" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="usertype">
+								<xs:annotation>
+									<xs:documentation>用户类型，1个人用户，2企业用户（补充）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="1" />
+										<xs:enumeration value="1" />
+										<xs:enumeration value="2" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="username">
+								<xs:annotation>
+									<xs:documentation>用户名</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="50" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="password">
+								<xs:annotation>
+									<xs:documentation>用户密码（补充）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="50" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="agency">
+					<xs:annotation>
+						<xs:documentation>代办人信息</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="id">
+								<xs:annotation>
+									<xs:documentation>代办人ID（在网上审批大厅自动生成）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="agencyname">
+								<xs:annotation>
+									<xs:documentation>代办人姓名</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="20" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cardid">
+								<xs:annotation>
+									<xs:documentation>代办人身份证号</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="18" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="mobilephone">
+								<xs:annotation>
+									<xs:documentation>代办人手机号码</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="11" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="email">
+								<xs:annotation>
+									<xs:documentation>代办人邮箱</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="50" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="parallel" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>并联审批信息</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="cid">
+								<xs:annotation>
+									<xs:documentation>并联事项ID</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cbsnum">
+								<xs:annotation>
+									<xs:documentation>并联事项业务流水号</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cprojectname">
+								<xs:annotation>
+									<xs:documentation>并联事项项目名称</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="100" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cstartdate">
+								<xs:annotation>
+									<xs:documentation>开始时间</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:dateTime" />
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cenddate">
+								<xs:annotation>
+									<xs:documentation>结束时间</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:dateTime" />
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cstatus">
+								<xs:annotation>
+									<xs:documentation>状态（0:待办; 1:办理中; 2:办结）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="1" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="permissions" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="permissions">
+		<xs:annotation>
+			<xs:documentation>审批数据信息集节点，该节点为XMLDOC字段的核心节点</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="permission">
+					<xs:annotation>
+						<xs:documentation>审批数据信息</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="id">
+								<xs:annotation>
+									<xs:documentation>事项ID</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="5" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="name">
+								<xs:annotation>
+									<xs:documentation>事项名称</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1" />
+										<xs:maxLength value="300" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="handler">
+								<xs:annotation>
+									<xs:documentation>是否一体化平台处理（0为一体化系统，1为否）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="1" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="bsid">
+								<xs:annotation>
+									<xs:documentation>业务ID（一体化申报时产生的主键）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="8" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="bsnum">
+								<xs:annotation>
+									<xs:documentation>业务流水号（一体化申报时提供的业务流水号，供申请人查询用）
+									</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="5" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="regionarea">
+								<xs:annotation>
+									<xs:documentation>前置行政区街道</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="6" />
+										<xs:maxLength value="10" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cid">
+								<xs:annotation>
+									<xs:documentation>并联审批事项ID</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cbsnum">
+								<xs:annotation>
+									<xs:documentation>并联事项业务流水号（补充）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="department">
+								<xs:annotation>
+									<xs:documentation>部门组织机构代码</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="flgdgxd">
+								<xs:annotation>
+									<xs:documentation>法律规定管辖地(法律规定管辖地的行政区划代码</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="20" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="fsywgxd">
+								<xs:annotation>
+									<xs:documentation>发生业务管辖地(发生业务管辖地的行政区划代码</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="20" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="sljtdd">
+								<xs:annotation>
+									<xs:documentation>受理具体地点(受理单位承办此受理业务人员所在的办公地点，精确到房间号或者窗口号)
+									</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="20" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="tjfs">
+								<xs:annotation>
+									<xs:documentation>此笔业务提交方式（0-窗口提交(现场申办) 1-网上提交(网上大厅) 2-信函3-电报
+										4-电传 5-传真 6-邮件 7-电子数据交换 8-窗口协办 9 - 村居代办 10 - 自助终端 11 -
+										移动终端)（补充）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="20" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="isfinish">
+								<xs:annotation>
+									<xs:documentation>业务状态（0:未预审;1:预审未通过;2:在办;3:办结;4:预审通过;5:受理不通过;6:办理不通过;7:补交挂起;8:特别程序挂起;-1:业务无效）
+									</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1" />
+										<xs:maxLength value="1" />
+										<xs:whiteSpace value="replace" />
+										<xs:enumeration value="-1" />
+										<xs:enumeration value="0" />
+										<xs:enumeration value="1" />
+										<xs:enumeration value="2" />
+										<xs:enumeration value="3" />
+										<xs:enumeration value="4" />
+										<xs:enumeration value="5" />
+										<xs:enumeration value="6" />
+										<xs:enumeration value="7" />
+										<xs:enumeration value="8" />
+										<xs:enumeration value="9" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="stagebh">
+								<xs:annotation>
+									<xs:documentation>阶段编号（针对并联审批，由一体化平台提供）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="50" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="status">
+								<xs:annotation>
+									<xs:documentation>阶段激活状态(0未激活，1激活，针对并联审批)</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="1" />
+										<xs:whiteSpace value="replace" />
+										<xs:enumeration value="0" />
+										<xs:enumeration value="1" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="certificate" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>证照信息</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="head">
+											<xs:annotation>
+												<xs:documentation>证照基本信息</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="id">
+														<xs:annotation>
+															<xs:documentation>证照id</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0" />
+																<xs:maxLength value="20" />
+																<xs:whiteSpace value="replace" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="code">
+														<xs:annotation>
+															<xs:documentation>证照编号</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:whiteSpace value="replace" />
+																<xs:minLength value="0" />
+																<xs:maxLength value="50" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="fullname">
+														<xs:annotation>
+															<xs:documentation>证照全称</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0" />
+																<xs:maxLength value="200" />
+																<xs:whiteSpace value="replace" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="name">
+														<xs:annotation>
+															<xs:documentation>证照简称</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0" />
+																<xs:maxLength value="200" />
+																<xs:whiteSpace value="replace" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="desc">
+														<xs:annotation>
+															<xs:documentation>证照描述</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0" />
+																<xs:maxLength value="200" />
+																<xs:whiteSpace value="replace" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="deptid">
+														<xs:annotation>
+															<xs:documentation>颁发部门</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0" />
+																<xs:maxLength value="20" />
+																<xs:whiteSpace value="replace" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="createtime">
+														<xs:annotation>
+															<xs:documentation>颁发时间</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0" />
+																<xs:maxLength value="20" />
+																<xs:whiteSpace value="replace" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="valid">
+														<xs:annotation>
+															<xs:documentation>有效期</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0" />
+																<xs:maxLength value="20" />
+																<xs:whiteSpace value="replace" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="version">
+														<xs:annotation>
+															<xs:documentation>版本号</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0" />
+																<xs:maxLength value="8" />
+																<xs:whiteSpace value="replace" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="data">
+											<xs:annotation>
+												<xs:documentation>审批申报表单，当baseinfo节点不为0时，dataxml节点必填
+												</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="datainfo" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>表单项信息</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:all>
+																<xs:element name="label">
+																	<xs:annotation>
+																		<xs:documentation>表单项变量名</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:whiteSpace value="replace" />
+																			<xs:minLength value="0" />
+																			<xs:maxLength value="20" />
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="labelname">
+																	<xs:annotation>
+																		<xs:documentation>表单项中文名</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:whiteSpace value="replace" />
+																			<xs:minLength value="0" />
+																			<xs:maxLength value="200" />
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="value">
+																	<xs:annotation>
+																		<xs:documentation>表单项数据值</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:whiteSpace value="replace" />
+																			<xs:minLength value="0" />
+																			<xs:maxLength value="200" />
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:all>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dispatches" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>调度节点（补充，用于并联审批二次调度）</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dispatch" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>具体调度信息</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="disptachid">
+														<xs:annotation>
+															<xs:documentation>调度ID</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:whiteSpace value="replace" />
+																<xs:minLength value="0" />
+																<xs:maxLength value="20" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="disptachname">
+														<xs:annotation>
+															<xs:documentation>调度名称</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:whiteSpace value="replace" />
+																<xs:minLength value="0" />
+																<xs:maxLength value="200" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="disptachstatus">
+														<xs:annotation>
+															<xs:documentation>状态，0未选择，1已选择</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0" />
+																<xs:maxLength value="1" />
+																<xs:whiteSpace value="replace" />
+																<xs:enumeration value="0" />
+																<xs:enumeration value="1" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="status">
+											<xs:annotation>
+												<xs:documentation>是否需要二次调度，0否，1是</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="1" />
+													<xs:whiteSpace value="replace" />
+													<xs:enumeration value="0" />
+													<xs:enumeration value="1" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="nodes" minOccurs="0" />
+							<xs:element ref="materials" />
+							<xs:element name="chargeinfo" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>收费数据信息</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="totalcharge">
+											<xs:annotation>
+												<xs:documentation>应收总费用</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="finalcharge">
+											<xs:annotation>
+												<xs:documentation>最终总费用</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="chargeunit">
+											<xs:annotation>
+												<xs:documentation>金额单位的代码(详见，附录D.3国标标准货币代码表)
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="3" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="chargeperson">
+											<xs:annotation>
+												<xs:documentation>收费人</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="200" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="chargetime">
+											<xs:annotation>
+												<xs:documentation>收费时间</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:dateTime" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="payer">
+											<xs:annotation>
+												<xs:documentation>缴费人姓名</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="200" />
+													<xs:whiteSpace value="replace" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="banker">
+											<xs:annotation>
+												<xs:documentation>银行收费人姓名</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="200" />
+													<xs:whiteSpace value="replace" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="deptname">
+											<xs:annotation>
+												<xs:documentation>执收单位名称</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="200" />
+													<xs:whiteSpace value="replace" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="recordnum">
+											<xs:annotation>
+												<xs:documentation>票据号</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="20" />
+													<xs:whiteSpace value="replace" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="paymentmethod">
+											<xs:annotation>
+												<xs:documentation>付款方式(0:现金;1:转帐;2:支票;3:其它)
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="1" />
+													<xs:whiteSpace value="replace" />
+													<xs:enumeration value="0" />
+													<xs:enumeration value="1" />
+													<xs:enumeration value="2" />
+													<xs:enumeration value="3" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="xmmc">
+								<xs:annotation>
+									<xs:documentation>申请审批的项目的具体名称</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="2" />
+										<xs:maxLength value="300" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="dealresults">
+								<xs:annotation>
+									<xs:documentation>办结结果代码： 0 – 出证办结（正常产生证照、批文的办结）1–
+										退回办结（退回或驳回申请的办结）2– 作废办结（指业务处理上无效的纪录）3–
+										删除办结（指录入错误、操作错误等技术上的无效纪录）4– 转报办结（指转报其他单位或上级单位的办结情况）5–
+										补交不来办结（指出现补交告知时，通知之后，申请人长期不来补交材料的办结）6– 办结（除以上所述情况外的办结）
+									</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="1" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="hzbh">
+								<xs:annotation>
+									<xs:documentation>受理回执编号或不受理回执编号</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="20" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="materials">
+		<xs:annotation>
+			<xs:documentation>审批材料节点</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="material">
+					<xs:annotation>
+						<xs:documentation>审批材料</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation>具体审批材料</xs:documentation>
+						</xs:annotation>
+						<xs:all>
+							<xs:element name="id">
+								<xs:annotation>
+									<xs:documentation>材料实例ID。申报时产生的材料编号。</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="mlid">
+								<xs:annotation>
+									<xs:documentation>材料ID。综合管理平台配置材料时产生</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="pid">
+								<xs:annotation>
+									<xs:documentation>父材料ID。综合管理平台配置时产生。</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="mlname">
+								<xs:annotation>
+									<xs:documentation>材料名称</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="mtype">
+								<xs:annotation>
+									<xs:documentation>材料类型（电子化要求：在线填报(1)，系统共享(2)，电子化上传(3)，证照(4),
+										窗口递交(5),速递服务(6)）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1" />
+										<xs:maxLength value="20" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="selecttype">
+								<xs:annotation>
+									<xs:documentation>已选择的电子化要求</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1" />
+										<xs:maxLength value="20" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="fid">
+								<xs:annotation>
+									<xs:documentation>上传文件返回ID。电子化上传产生的文件ID或在线填报产生的FORMDATA的ID
+									</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="30" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="fpath">
+								<xs:annotation>
+									<xs:documentation>FTP文件存储路径</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="200" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="fname">
+								<xs:annotation>
+									<xs:documentation>上传材料名称</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="200" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="status">
+								<xs:annotation>
+									<xs:documentation>材料状态(0未提交1提交2补交)</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1" />
+										<xs:maxLength value="1" />
+										<xs:whiteSpace value="replace" />
+										<xs:enumeration value="0" />
+										<xs:enumeration value="1" />
+										<xs:enumeration value="2" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="orinum">
+								<xs:annotation>
+									<xs:documentation>原件份数</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="20" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="copynum">
+								<xs:annotation>
+									<xs:documentation>复印件份数</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="20" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="isneed">
+								<xs:annotation>
+									<xs:documentation>是否必要(0非必要1必要)</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1" />
+										<xs:maxLength value="1" />
+										<xs:whiteSpace value="replace" />
+										<xs:enumeration value="0" />
+										<xs:enumeration value="1" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="baseinfo">
+								<xs:annotation>
+									<xs:documentation>是否是基本信息填报表单(0:非表单;1:个人;2:企业;3:业务)
+									</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1" />
+										<xs:maxLength value="1" />
+										<xs:whiteSpace value="replace" />
+										<xs:enumeration value="0" />
+										<xs:enumeration value="1" />
+										<xs:enumeration value="2" />
+										<xs:enumeration value="3" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="formver">
+								<xs:annotation>
+									<xs:documentation>表单版本号</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="8" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="adjustment">
+								<xs:annotation>
+									<xs:documentation>材料状态为补交时，填写补交意见（补充）</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0" />
+										<xs:maxLength value="200" />
+										<xs:whiteSpace value="replace" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="dataxml" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>审批申报表单，当baseinfo节点不为0时，dataxml节点必填
+									</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="datainfo" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>表单项信息</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="label">
+														<xs:annotation>
+															<xs:documentation>表单项变量名</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:whiteSpace value="replace" />
+																<xs:minLength value="0" />
+																<xs:maxLength value="20" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="labelname" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>表单项中文名</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:whiteSpace value="replace" />
+																<xs:minLength value="0" />
+																<xs:maxLength value="200" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="value">
+														<xs:annotation>
+															<xs:documentation>表单项数据值</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:whiteSpace value="replace" />
+																<xs:minLength value="0" />
+																<xs:maxLength value="200" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="nodes">
+		<xs:annotation>
+			<xs:documentation>审批环节审批办理节点</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="complementnode" minOccurs="0">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="acceptnode" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>补交受理环节</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="handler">
+											<xs:annotation>
+												<xs:documentation>补交受理人</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="20" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="handlerdate">
+											<xs:annotation>
+												<xs:documentation>补交受理时间</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:dateTime" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="handleraddr">
+											<xs:annotation>
+												<xs:documentation>补交受理地点</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="200" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="handlerlist">
+											<xs:annotation>
+												<xs:documentation>补交受理清单</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="200" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="department">
+											<xs:annotation>
+												<xs:documentation>部门组织机构代码</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="20" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="notifynode">
+								<xs:annotation>
+									<xs:documentation>补交告知环节</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="nodeactor">
+											<xs:annotation>
+												<xs:documentation>补交告知发出人</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="20" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="complementdate">
+											<xs:annotation>
+												<xs:documentation>补交告知发出时间</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:dateTime" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="complementidea">
+											<xs:annotation>
+												<xs:documentation>补交告知原因</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="100" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="complementlist">
+											<xs:annotation>
+												<xs:documentation>补交告知清单</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="200" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="department">
+											<xs:annotation>
+												<xs:documentation>部门组织机构代码</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="20" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="specialnode" minOccurs="0">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="handlenode" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>特别程序处理环节</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="specialresult">
+											<xs:annotation>
+												<xs:documentation>特别程序结果</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="50" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialresultdate">
+											<xs:annotation>
+												<xs:documentation>特别程序结果产生时间（当特别程序是委托第三方机构进行的，此栏填写产生结果的时间）
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:dateTime" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialenddate">
+											<xs:annotation>
+												<xs:documentation>特别程序结束时间</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:dateTime" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialpay">
+											<xs:annotation>
+												<xs:documentation>特别程序收费金额</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="8" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="department">
+											<xs:annotation>
+												<xs:documentation>部门组织机构代码</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="20" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="applynode">
+								<xs:annotation>
+									<xs:documentation>特别程序申请环节</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="specialtype">
+											<xs:annotation>
+												<xs:documentation>特别程序类型（A:延长审批;B:非延长审批，如专家鉴定、听证、招标、拍卖、检验、检测、检疫等）
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="2" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialname">
+											<xs:annotation>
+												<xs:documentation>特别程序名称</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="20" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialstartdate">
+											<xs:annotation>
+												<xs:documentation>特别程序开始时间</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:dateTime" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialuser">
+											<xs:annotation>
+												<xs:documentation>特别程序批准人</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="20" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialusertel">
+											<xs:annotation>
+												<xs:documentation>特别程序批准人电话号码</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="13" />
+													<xs:whiteSpace value="replace" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialuserphone">
+											<xs:annotation>
+												<xs:documentation>特别程序批准人手机</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="11" />
+													<xs:whiteSpace value="replace" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialidea">
+											<xs:annotation>
+												<xs:documentation>特别程序启动原因</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="50" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialcontent">
+											<xs:annotation>
+												<xs:documentation>特别程序申请内容</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="100" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="speciallimit">
+											<xs:annotation>
+												<xs:documentation>特别程序时限（天数）</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="8" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="specialunit">
+											<xs:annotation>
+												<xs:documentation>特别程序时限单位（G:工作日;Z:自然日）</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="1" />
+													<xs:whiteSpace value="replace" />
+													<xs:enumeration value="G" />
+													<xs:enumeration value="Z" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="department">
+											<xs:annotation>
+												<xs:documentation>部门组织机构代码</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:whiteSpace value="replace" />
+													<xs:minLength value="0" />
+													<xs:maxLength value="20" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="node" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>审批环节</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation>具体审批环节处理信息</xs:documentation>
+						</xs:annotation>
+						<xs:all>
+							<xs:element name="nodeid">
+								<xs:annotation>
+									<xs:documentation>环节ID.综合管理平台配置时产生</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="1" />
+										<xs:maxLength value="20" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="nodename">
+								<xs:annotation>
+									<xs:documentation>环节名称</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="50" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="nodeactor">
+								<xs:annotation>
+									<xs:documentation>环节处理人</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="10" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="nodeactorgh">
+								<xs:annotation>
+									<xs:documentation>受理单位办理人工号</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="10" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="nodeactorzwmc">
+								<xs:annotation>
+									<xs:documentation>环节处理人职务名称</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="10" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="nodeactorzwdm">
+								<xs:annotation>
+									<xs:documentation>环节处理人职务代码</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="10" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="department">
+								<xs:annotation>
+									<xs:documentation>部门组织机构代码</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="20" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="handlerdate">
+								<xs:annotation>
+									<xs:documentation>环节处理时间</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:dateTime" />
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="handleridea">
+								<xs:annotation>
+									<xs:documentation>环节处理意见</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="200" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="handlerfid">
+								<xs:annotation>
+									<xs:documentation>环节处理意见附件</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="replace" />
+										<xs:minLength value="0" />
+										<xs:maxLength value="200" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
