@@ -1,0 +1,208 @@
+/**
+	@name GisExFn.dlflAnalFromLyr
+	@fn
+	@description 地类分类统计分析(图层)
+	@param {String} srcLayer 源图层物理名
+	@param {String} srcWhere 源图层过滤条件
+	@param {String} srcKeyFld 源图层关键字段
+	@param {String} dlLayer 地类图版图层名
+	@param {String} xzdwLayer 现状地物图层名
+	@param {Table} dkTable 地块临时表
+	@param {Table} qsTable 权属临时表
+	@param {Table} dlTable 地类临时表
+	@returns {boolean}
+	@example 
+		dlflAnalFromLyr('0.GZTC','FBizRecID='XXXX'','FEATUREGUID','0.DLTB','0.XZDW',dkTable,qsTable,dlTable)
+*/	
+
+/**
+	@name GisExFn.project
+	@fn
+	@description 空间投影
+	@param {String} inSR 输入空间参考
+	@param {String} outSR 输出空间参考
+	@param {JSONArray} geometryArray 图形数组
+	@returns {JSONArray}
+	@example 
+		project('2362','4610',Geometrys);
+*/	
+
+/**
+	@name GisExFn.getGeometryExtent
+	@fn
+	@description 获取图形范围
+	@param {Table} table 坐标表对象
+	@param {String} xFld x字段名
+	@param {String} yFld y字段名
+	@returns {JSONArray}
+	@example 
+		getGeometryExtent(table,'x','y');
+*/
+	
+/**
+	@name GisExFn.bizGisAnalFromLayer
+	@fn
+	@description 来自图层的占压分析
+	@param {JSONObject} source 占压分析的源 ,表名+where 条件
+	@param  {JSONArray} analParams 分析参数 图层、字段
+	@param  {List} trgTables 字段名
+	@returns {Object}
+	@example 
+    bizGisAnalFromLayer( layerSrc('YDBPCGTC', concat( 'FEATUREGUID=''' ,(:featureguid) ,'''' )) , 
+    analList(analParam((:layerTDYT),'TDYTQLXDM'), analParam((:layerQMDLTB),'GHDLMC,XZQDM'),analParam((:layerJBNT),'QSDWDM,QSDWMC,DLMC'),analParam((:layerJSYDGZQ),'GZQLXDM'),
+    dlAnalParam((:layerDLTB),(:layerXZDW),'DLBM,DLMC,QSDWDM,QSDWMC,QSXZ')) ,
+    list(tableInstance('YTFQ'),tableInstance('QMDLTB'),tableInstance('JBNT'),tableInstance('JSYDGZQ'),tableInstance('DLTB')))
+*/
+/**
+	@name GisExFn.bizGisAnalFormGeos
+	@fn
+	@description 来自地块表的占压分析
+	@param {Table }dkTable,地块表对象
+	@param  {JSONArray}analParams,分析参数  
+	@param {List}trgTables,目标表,
+	@param {String}bizSoeUrl,soe地址，配置文件中的soe 标识 一般都是bizSoeUrl,
+	@param {String}fGeomField 图形序列化信息字段
+	@returns {Object}
+	@example 
+    bizGisAnalFormGeos(tableInstance('8729'), 
+    analList(analParam((:layerTDYT),'TDYTQLXDM'), analParam((:layerQMDLTB),'GHDLMC,XZQDM'),analParam((:layerJBNT),'QSDWDM,QSDWMC,DLMC'),analParam((:layerJSYDGZQ),'GZQLXDM'),
+    dlAnalParam((:layerDLTB),(:layerXZDW),'DLBM,DLMC,QSDWDM,QSDWMC,QSXZ')) ,
+    list(tableInstance('YTFQ'),tableInstance('QMDLTB'),tableInstance('JBNT'),tableInstance('JSYDGZQ'),tableInstance('DLTB')),'bizSoeUrl','fGeometry')
+*/
+/**
+	@name GisExFn.bizGisAnalFormGeos
+	@fn
+	@description 来自地块表的占压分析
+	@param {Table }dkTable,地块表对象
+	@param  {JSONArray}analParams,分析参数  
+	@param {List}trgTables,目标表,
+	@param {String}bizSoeUrl,soe地址，配置文件中的soe 标识 一般都是bizSoeUrl,
+	@param {String}fGeomField 图形序列化信息字段
+	@returns {JSONArray}
+	@example 
+    bizGisAnalFormGeos(tableInstance('8729'), 
+    analList(analParam((:layerTDYT),'TDYTQLXDM'), analParam((:layerQMDLTB),'GHDLMC,XZQDM'),analParam((:layerJBNT),'QSDWDM,QSDWMC,DLMC'),analParam((:layerJSYDGZQ),'GZQLXDM'),
+    dlAnalParam((:layerDLTB),(:layerXZDW),'DLBM,DLMC,QSDWDM,QSDWMC,QSXZ')) ,
+    list(tableInstance('YTFQ'),tableInstance('QMDLTB'),tableInstance('JBNT'),tableInstance('JSYDGZQ'),tableInstance('DLTB')),'bizSoeUrl','fGeometry')
+*/
+/**
+	@name GisExFn.layerSrc
+	@fn
+	@description 构造图层占压源
+	@param {String }name,图层名称
+	@param  {String}where,过滤条件
+	@returns {object}
+	@example 
+    layerSrc('YDBPCGTC', concat( 'FEATUREGUID=''' ,(:featureguid) ,'''' ))
+*/
+/**
+	@name GisExFn.analParam
+	@fn
+	@description 构造占压分析参数
+	@param {String }name,图层名称
+	@param  {String}returnFields,返回的字段
+	@returns {object}
+	@example 
+    analParam((:layerQMDLTB),'GHDLMC,XZQDM')
+*/
+/**
+	@name GisExFn.analExParam
+	@fn
+	@description 构造迭代分析参数
+	@param {String }name,图层名称
+	@param  {String}returnFields,返回的字段
+	@param  {String}subParams,子参数
+	@returns {object}
+	@example 
+
+*/
+/**
+	@name GisExFn.dlAnalParam
+	@fn
+	@description 构造地类占压分析参数
+	@param {String }dltbName,地类图斑名称
+	@param  {String}xzdwName,现状地物名称
+	@param {String}returnFields 返回字段名称
+	@returns {object}
+	@example 
+    dlAnalParam((:layerDLTB),(:layerXZDW),'DLBM,DLMC,QSDWDM,QSDWMC,QSXZ'))
+*/
+/**
+	@name GisExFn.dlAnalExParam
+	@fn
+	@description 构造地类占压分析参数
+	@param {String }dltbName,地类图斑名称
+	@param  {String}xzdwName,现状地物名称
+	@param {String}returnFields 返回字段名称
+	@param {Boolean}returnXzdwDetail 返回现状地物名称
+	@returns {object}
+	@example 
+*/
+/**
+@name GisExFn.calPolygonArea
+	@fn
+	@description 计算图形面积
+	@param {String }geometry,图形ID
+	@param  {String}convertName,计算单位
+	@returns {Double}
+	@example  
+*/
+/**
+@name GisExFn.yjdlMc
+	@fn
+	@description 获取一级地类的名称
+	@param {String }dlbm,地类编码
+	@returns {String} 地类名称    
+	@example  
+	yjdlMc("nyd");
+*/
+
+/**
+@name GisExFn.project
+	@fn
+	@description 获取一级地类的名称
+	@param {String }inSR,当前投影参数
+	@param {String}outSR,目标投影参数   
+	@param {Object}geometryArray,图形参数
+	@returns {Object} 返回投影后的图形信息
+	@example      
+*/
+/**
+@name GisExFn.getGeometryExtent
+	@fn
+	@description 获取限定范围的图形区域
+	@param {table }table,图形坐标表
+	@param {String}xFld ,X坐标
+	@param {String}xFld,Y坐标
+	@returns {Object} 返回图形区域的最小的X坐标，最大的Y坐标
+	@example      
+*/
+
+/**
+@name GisExFn.TransformJsonToXml
+	@fn
+	@description XML图形序列转JSON
+	@param {table }ajson,json串
+	@param {String}adh ,带号
+	@param {String}azyjx,中央经线
+	@returns {String} xml数据格式
+	@example      
+*/
+/**
+@name GisExFn.TransformJsonToXml
+	@fn
+	@description JSON图形序列转XML
+	@param {table }ajson,json串
+	@param {String}adh ,带号
+	@param {String}azyjx,中央经线
+	@returns {String} xml数据格式
+	@example      
+*/
+/**
+@name GisExFn.readXmlGemorty2JSONString
+	@fn
+	@description XML图形序列转JSON
+	@param {String}XML,XML串
+	@returns {String} JSON数据格式
+	@example      
+*/

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<model xmlns="http://www.justep.com/model">  
+  <include>/common/gwbl/ontology</include>  
+  <include>/base/core/flow/ontology</include>  
+  <include>/common/datasource</include> 
+</model>

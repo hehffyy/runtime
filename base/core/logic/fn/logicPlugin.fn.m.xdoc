@@ -1,0 +1,207 @@
+/**
+	@name LogicPluginContextUtils
+	@class
+	@model BIZ
+	@description 工作日函数
+	@example
+	工作日函数定义，定义模块是“/base/core/logic/fn”，使用数据函数时，需要先引用（use或include）模块“/base/core/logic/fn”。
+*/
+
+/**
+	@name LogicPluginContextUtils.clearTableData
+	@fn
+	@description 清空工作表数据
+	@param  {String} objectId 对象Id
+	@returns {Integer} 返回清空的记录数
+	@example clearTableData('t_ywslb')
+*/
+
+/**
+	@name LogicPluginContextUtils.tableData
+	@fn
+	@description 获得列表当前行数据。如果行数为0，或者当前行为空(游标位于eof、bof)，返回null。
+	@param  {String} objectId 对象Id。如果是表，对应于物理表名(概念名)
+	@param	{String} propName 对象属性。如果是表，对应于物理字段名(关系名)
+	@returns {Object}
+*/
+
+/**
+	@name LogicPluginContextUtils.tableRow
+	@fn
+	@description 获得列表当前行对象。如果行数为0，或者当前行为空(游标位于eof、bof)，返回null。
+	@param  {String} objectId 对象Id。如果是表，对应于物理表名(概念名)
+	@returns {Object} Row
+*/
+
+/**
+	@name LogicPluginContextUtils.tableRowState
+	@fn
+	@description 获得列表当前行对象状态，NONE, NEW, EDIT, DELETE。如果行数为0，或者当前行为空(游标位于eof、bof)，返回null。
+	@param  {String} objectId 对象Id。如果是表，对应于物理表名(概念名)
+	@returns {String} 
+*/
+
+
+/**
+	@name LogicPluginContextUtils.tableRecordCount
+	@fn
+	@description 获得表记录数。
+	@param  {String} objectId 对象Id。如果是表，对应于物理表名(概念名)
+	@returns {Integer}
+*/
+
+/**
+	@name LogicPluginContextUtils.setTableCursor
+	@fn
+	@description 设置表对象游标
+	@param  {String} objectId 对象Id。如果是表，对应于物理表名(概念名)
+	@param  {Integer} index 基于0的游标索引
+	@returns {void}
+*/
+
+/**
+	@name LogicPluginContextUtils.printTableState
+	@fn
+	@description 打印工作表状态。
+	@param  {String} objectId 对象Id。如果是表，对应于物理表名(概念名)
+	@returns {Boolean}
+*/
+
+/**
+	@name LogicPluginContextUtils.tableInstance
+	@fn
+	@description 获得Table实例对象，一般用于作为代码逻辑组件的返回值。
+	@param  {String} objectId 对象Id。物理表名(概念名)
+	@returns {Table}
+	@example 
+	注意如果返回表是明细表，注意把主表循环一遍，这个明细表才会加载所有数据。
+*/
+
+/**
+	@name LogicPluginContextUtils.getPluginContextBizRecId
+	@fn
+	@description 获得插件案卷ID
+	@returns {Integer} 返回插件案卷ID
+	@example getPluginContextBizRecId()
+*/
+
+/**
+	@name LogicPluginContextUtils.saveTables
+	@fn
+	@description 获得插件案卷ID
+	@param  {Boolean} ignoreException 忽略异常
+	@param  {String} emptyData 空数据
+	@param  {String} tableNames 工作表名，多个英文逗号隔开
+	@returns {void}
+*/
+
+/**
+	@name LogicPluginContextUtils.setTableRowValue
+	@fn
+	@description 给当前行字段设置值
+	@param  {Boolean} objectId 对象Id。物理表名(概念名)
+	@param  {String} propName 字段名
+	@param  {String} propValue 字段值
+	@returns {void}
+	@example setTableRowValue('t_ywslb','ywmc','123123123')
+*/
+
+/**
+	@name LogicPluginContextUtils.executeCurrentBizLogicPlugin
+	@fn
+	@description 执行当前业务环节逻辑组件，允许代码逻辑组件中调用另外一个业务逻辑组件
+	@param  {String} url 逻辑组件资源路径
+	@param  {String} bizRecId 案卷编号，静态环节、查询环节可输入null
+	@param  {Map} variants 逻辑组件定义参数的初始值
+	@param  {Map} filters 工作表的过滤条件
+	@returns {Table}
+*/
+
+/**
+	@name LogicPluginContextUtils.executeTargetBizLogicPlugin
+	@fn
+	@description 执行目标业务逻辑组件，允许代码逻辑组件中调用另外一个业务逻辑组件
+	@param  {String} url 逻辑组件资源路径
+	@param  {String} targetProcess 目标流程url
+	@param  {String} targetActivity 目标环节名(例如act2)
+	@param  {String} bizRecId 案卷编号，静态环节、查询环节可输入null
+	@param  {Map} variants 逻辑组件定义参数的初始值
+	@param  {Map} filters 工作表的过滤条件
+	@returns {Table}
+*/
+
+/**
+	@name LogicPluginContextUtils.refreshLogicProcessInnerTable
+	@fn
+	@description 刷新逻辑组件内部数据集
+	@param  {String} objectId 逻辑组件内部数据集对象Id
+	@returns {void}
+*/
+
+
+/**
+	@name LogicPluginContextUtils.getContextParameter
+	@fn
+	@description 获得插件执行上下文参数
+	@param  {String} name 参数名称
+	@param  {Boolean} parent 如果是插件调用插件，是否历便父插件环境
+	@returns {void}
+*/
+
+/**
+	@name LogicPluginContextUtils.setContextParameter
+	@fn
+	@description 设置插件执行上下文参数，可用于插件调用插件时，传递或“伪造”参数
+	@param  {String} name 参数名称
+	@param  {Object} value 参数值
+	@returns {void}
+*/
+
+/**
+	@name LogicPluginContextUtils.getBizRecValue
+	@fn
+	@description 获得案卷字段值
+	@param  {String} name 字段名(忽略大小写)
+	@returns {void}
+*/
+
+/**
+	@name LogicPluginContextUtils.setBizRecValue
+	@fn
+	@description 设置案卷字段值
+	@param  {String} name 字段名(忽略大小写)
+	@param  {Object} value 参数值
+	@returns {void}
+*/
+
+/**
+	@name LogicPluginContextUtils.setBizRecValues
+	@fn
+	@description 设置案卷多个字段值
+	@param  {List<String>} names 字段名列表(忽略大小写)
+	@param  {List<Object>} values 字段值列表
+	@returns {void}
+*/
+
+/**
+	@name LogicPluginContextUtils.checkTargetBizRules
+	@fn
+	@description 检查目标业务环节的业务规则
+	@param  {String} targetProcess 目标流程url，如果为空取当前Process
+	@param  {String} targetActivity 目标环节名(例如act2)，如果为空取当前Activity
+	@param  {String} bizRecId 案卷编号、单一主控主键，静态环节、查询环节可输入null
+	@param  {Map} variants 逻辑组件定义参数的初始值、表达式中的宿主参数值
+	@param  {Map} filters 工作表的过滤条件，可包含宿主参数
+	@param  {List<String>} urls 规则的资源路径
+	@returns {List<Map<String,Object>>} 规则检查结果 : {guid:'abc',type:'禁止规则',name:'面积小于100',stop:true,message:'面积小于100，请检查数据'}
+*/
+
+/**
+	@name LogicPluginContextUtils.joinBizRuleMessages()
+	@fn
+	@description 连接所有规则检查结果的消息
+	@param {List<Map<String,Object>>} ruleInfos 规则检查结果 : {guid:'abc',type:'禁止规则',name:'面积小于100',stop:true,message:'面积小于100，请检查数据'}
+	@param {String} separator 连接分割符号
+	@returns {String} 所有规则结果拼串
+*/
+

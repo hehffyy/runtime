@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<model xmlns="http://www.justep.com/model">  
+  <use>/base/system/workDaysManage/data</use>  
+  <use>/base/system/workDaysManage/logic/action</use>  
+  <use>/base/system/workDaysManage/logic/code</use>  
+  <use>/system/logic/fn</use>  
+  <use>/system/logic/action</use>  
+  <use>/system/logic/code</use>  
+  <use>/base/core/logic/fn</use>
+  <use>/base/core/logic/code</use>
+</model>

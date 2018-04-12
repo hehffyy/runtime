@@ -1,0 +1,29 @@
+/**
+	@name ExchangeFn.wsyslOpr
+	@fn
+	@description 网上预受理
+	@param {String} serialNo 网上受理号
+	@returns {String} 返回案卷编号
+	@example 
+		wsyslOpr("20150003")
+*/	
+
+/**
+	@name ExchangeFn.genExTaskByFlow
+	@fn
+	@description 流程触发产生交换任务(省厅)
+	@param {List} actList 环节List (受理、承办、审核、批准环节，如果最后一个环节不是办结环节需要设置)
+	@returns {List} ideaList 办理意见List
+	@example 
+		genExTaskByFlow(list("act1","act2","act3","act4"),list("承办意见","审核意见","批准意见"))
+*/	
+
+/**
+	@name ExchangeFn.genExTaskByFlow1
+	@fn
+	@description 流程触发产生交换任务(地市)
+	@param {List} actList 环节List (受理、承办、审核、批准环节，如果最后一个环节不是办结环节需要设置)
+	@returns {List} ideaList 办理意见List
+	@example 
+		genExTaskByFlow(list("act1","act2","act3","act4"),list("承办意见","审核意见","批准意见"))
+*/	

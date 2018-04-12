@@ -1,0 +1,420 @@
+/**
+	@name CommonFnExt
+	@class
+	@model BIZ
+	@description 通用函数(扩展)
+	@example
+	工作日函数定义，定义模块是“/base/core/logic/fn”，使用数据函数时，需要先引用（use或include）模块“/base/core/logic/fn”。
+*/
+
+/**
+	@name CommonFnExt.println
+	@fn
+	@description 打印输出到控制台
+	@param  {String} object 输出对象
+	@returns {void}
+*/
+
+/**
+	@name CommonFnExt.containStr
+	@fn
+	@description 字符包含
+	@param {String} srcString 字符串
+	@param {String} cldString 是否包含的字符串
+	@returns  {boolean} 包含返回true
+*/
+
+/**
+	@name CommonFnExt.divide
+	@fn
+	@description 除
+	@param {Object} num1 字符串
+	@param {Object} num2 是否包含的字符串
+	@returns {Decimal}  
+*/
+
+/**
+	@name CommonFnExt.listAdd
+	@fn
+	@description 两个List合并
+	@param  {List} List  list1
+	@param  {Object} other list2
+	@returns {List} 合并和的list
+*/
+
+/**
+	@name CommonFnExt.getListSize
+	@fn
+	@description 获取List对象的元素个数
+	@param  {List} plist  list对象
+	@returns {Integer} 返回list的元素个数
+*/
+
+/**
+	@name CommonFnExt.getListValueByIndex
+	@fn
+	@description 获取List的元素
+	@param  {List} plist  list对象
+	@param  {Integer} index  索引
+	@returns {Object} 返回指定索引的元素
+*/
+
+/**
+	@name CommonFnExt.inClause
+	@fn
+	@description 替换为SQL的in子句
+	@param  {String} in SQL in 句法括号内的部分
+	@returns {String}
+*/
+
+/**
+	@name CommonFnExt.updateBizData
+	@fn
+	@description 操作业务数据
+	@param  {String} updateStatement 更新语句,{String} dataModel  连接的数据源，允许null或''，取的是系统的数据源'/system/data' 
+	@returns {Boolean}
+*/
+
+/**
+	@name CommonFnExt.updateSQL
+	@fn
+	@description 更新业务数据带参数(增删改)
+	@param  {String} updateStatement
+	@param  {String} dataModel
+	@param  {List} binds
+	@returns {Integer} 
+*/
+
+/**
+	@name CommonFnExt.jsonPut
+	@fn
+	@description 给json对象增加属性赋值
+	@param  {Object} obj 需要操作的json对象,允许为空（新对象）
+	@param  {Object...} key_value  ,变体类型 支持多属性赋值,必须成对增加， {String} key  属性名(非空), {Object} value 属性值
+	@returns {Object} 返回传入json对象增加属性赋值后的对象值，如：原对象有2个属性，返回后，有5个属性
+	            例子： jsonPut(null,'key1','value1','key2','value2')
+	
+*/
+
+/**
+	@name CommonFnExt.jsonArrayAdd
+	@fn
+	@description 给jsonArray数组增加json对象
+	@param  {Object} obj 需要操作的jsonArray数组，允许为空（新数组）,{Object} child  子json对象
+	@returns {Object} 返回传入json数组增加json对象后的数组值，如：原数组有2个元素，返回后为3个元素
+*/
+
+/**
+	@name CommonFnExt.jsonArrayGet
+	@fn
+	@description 获取json数组元素
+	@param  {Object} obj 需要操作的jsonArray数组
+	@param  {Integer} index jsonArray数组的索引
+	@returns {Object} 返回jsonArray数组元素
+*/
+
+/**
+	@name CommonFnExt.getJSONArraySize
+	@fn
+	@description 获取JSON数组size
+	@param  {Object} obj 需要操作的json对象
+	@returns {Integer} 返回JSON数组size
+*/
+
+/**
+	@name CommonFnExt.jsonPut
+	@fn
+	@description 给json对象增加属性赋值
+	@param  {Object} obj 需要操作的json对象,允许为空（新对象），{String} key  属性名(非空), {Object} value 属性值
+	@returns {Object} 返回传入json对象增加属性赋值后的对象值，如：原对象有2个属性，返回后，有3个属性
+*/
+
+/**
+	@name CommonFnExt.jsonGetAttr
+	@fn
+	@description 获取json对象属性值
+	@param  {Object} obj 需要操作的json对象
+	@param  {String} key json对象的key值
+	@returns {Object} 返回json对象属性值
+*/
+
+/**
+	@name CommonFnExt.jsonArrayAdd
+	@fn
+	@description 给jsonArray数组增加json对象
+	@param  {Object} obj 需要操作的jsonArray数组，允许为空（新数组）,{Object} child  子json对象
+	@returns {Object} 返回传入json数组增加json对象后的数组值，如：原数组有2个元素，返回后为3个元素
+*/
+
+/**
+	@name CommonFnExt.readByJSONpath
+	@fn
+	@description 获取json指定节点路径的值
+	@param  {Object} sourceJson 需要操作的json对象
+	@param  {String} jsonPath 路径值
+	@returns {Object} 返回json对象属性值
+*/
+
+/**
+	@name CommonFnExt.toJsonObj
+	@fn
+	@description 字符串转json对象
+	@param  {Object} obj object对象，允许为空
+	@returns {Object} 返回json对象
+*/
+
+/**
+	@name CommonFnExt.strToList
+	@fn
+	@description 字符串转换成List
+	@param  {String} str 要转换的字符串,{String} spliter  分隔符
+	@returns {Object} 返回List对象
+*/
+
+
+/**
+	@name CommonFnExt.startFlow
+	@fn
+	@description 启动流程
+	@param  {String} bizRecId 案卷编号，允许为空，如果案卷不存在，自动新增一条案卷
+	@param  {String} process 流程的url路径。例如
+	@param  {String} activity 环节名称,允许为空，默认为首环节。例如'act1'
+	@param  {List<OrgUnit>} executors 执行者列表,允许为空， 默认为当前执行者
+	
+	@returns {String} 返回启动后的环节实例ID(ActivityInstance)
+	@example
+	startFlow(null,'/gdsdzzw/lcyw/zhj/process/zhj/zhjProcess','act2',findChildren2())
+*/
+
+/**
+	@name CommonFnExt.preStartFlow
+	@fn
+	@description 不动产启动流程
+	@param  {String} bizRecId 案卷编号，允许为空，如果案卷不存在，自动新增一条案卷
+	@param  {String} process 流程的url路径。例如
+	@param  {String} activity 环节名称,允许为空，默认为首环节。例如'act1'
+	@param  {String} fExecutorexpr 单个执行者ID或者FID，多个逗号隔开
+	
+	@returns {String} 返回成功“ok”，失败返回“启动流程出现异常!”
+	@example
+	startFlow(null,'/gdsdzzw/lcyw/zhj/process/zhj/zhjProcess','act2','人员ID或者FID')
+*/
+
+/**
+	@name CommonFnExt.newMap
+	@fn
+	@description 创建Map对象
+	@param  {Object} keyValues 初始化值,变参类型 key1,value1,key2,value2....keyN,valueN
+	@returns {Map<String,Object>} 返回一个Map对象
+	@example
+	newMap()、newMap('rowid',tableData('B_BizRec','fBizRecId'),'受理人',tableData('B_BizRec','fSLR'))
+*/
+
+/**
+	@name CommonFnExt.mapPut
+	@fn
+	@description 设置Map属性值
+	@param  {Map<String,Object>} map 目标Map对象
+	@param  {Object} keyValues 初始化值,变参类型 key1,value1,key2,value2....keyN,valueN
+	@returns {Map<String,Object>} 返回目标Map对象，如果map为空则创建一个新的Map
+	@example
+	mapPut(:map,'受理时间',currentDateTime())、mapPut(null,'rowid',tableData('B_BizRec','fBizRecId'),'受理人',tableData('B_BizRec','fSLR'))
+*/
+
+/**
+	@name CommonFnExt.mapGet
+	@fn
+	@description 获取Map属性
+	@param  {Map<String,Object>} map 目标Map对象
+	@param  {Object} key key值
+	@returns {Object} 返回属性值
+	@example mapGet(:map,'受理时间')
+*/
+
+/**
+	@name CommonFnExt.loadJsonToTables
+	@fn
+	@description 将平行占压分析的返回结果Json字符串，转换到指定的一组内存表中，供计算组件进行使用
+	@param  {JSONObject} srcData 平行占压分析返回结果
+	@param  {Map<String, Table> } tableMap 内存表Map，key为内存表表名，value为内存表实例
+	@returns {boolean>} 转换成功标识，true成功，false失败
+	@example loadJsonToTables( srcData, newMap('TA',tableInstance('TA'),'TB',tableInstance('TB')))
+*/
+
+/**
+	@name CommonFnExt.loadJsonToTables2
+	@fn
+	@description 将级联占压分析的返回结果Json字符串，转换到指定的一组内存表中，供计算组件进行使用
+	@param  {JSONObject} srcData 级联占压分析返回结果
+	@param  {Map<String, Table> } tableMap 内存表Map，key为内存表表名，value为内存表实例，必须把所有级联占压的图层对应的内存表全部加载
+	@param  {Object} fkeyMap  内存表的子表的外键声明，支持两种方式，1、Map对象，2、字符串，格式为'TA.fkey1;TB.fkey2'，
+	    即：TA表的外键为fkey1字段，TB表的外键为fkey2字段，主表不传外键；必须把除主表外的内存表全部定义
+	@returns {boolean>} 转换成功标识，true成功，false失败
+	@example loadJsonToTables( srcData, newMap('TA',tableInstance('TA'),'TB',tableInstance('TB'),'TC',tableInstance('TC')),'TB.FKEY1;TC.FKEY2')
+*/
+
+/**
+	@name DataFnExt.getBizRecData
+	@fn
+	@description 获得案卷编号(fBizRecId)的案卷类表的数据
+	@param  {String} concept 表名
+	@param  {String} relation 字段列表，逗号分隔
+	@returns {Object}
+	@example 
+	单字段返回字段值，多字段返回值的列表(List对象)
+*/
+
+/**
+	@name CommonFnExt.toJSONArray
+	@fn
+	@description 字符转json数组
+	@param  {String} list 字符串
+	@returns {Object} 
+	@example 
+*/
+
+/**
+	@name CommonFnExt.hashset
+	@fn
+	@description 哈希集合添加对象
+	@param  {Set} set 哈希集合
+	@param  {Object} value 对象
+	@returns {Set}
+*/
+
+/**
+	@name CommonFnExt.contains
+	@fn
+	@description 集合中是否包含对象
+	@param  {Collection} coll 集合对象 可以是List或者是Set对象
+	@param  {Object} value 对象
+	@returns {boolean}
+*/
+
+/**
+	@name CommonFnExt.lpad
+	@fn
+	@description 从左边对字符串使用指定的字符进行填充
+	@param  {String} str 需要填充的字符串
+	@param  {Integer} len 填充后长度
+	@param  {String} pad 填充字符串
+	@returns {String}
+*/
+
+/**
+	@name CommonFnExt.getSysPara
+	@fn
+	@description 提取系统参数值
+	@param  {String} sysName 参数名称
+	@returns {String}  如果返回值为 ‘没有参数名对应的值’  说明在系统参数表中不存在指定的参数名称
+	@example getSysPara('是否按区域过滤')
+*/
+
+
+
+/**
+	@name MQTT.sendMessage
+	@fn
+	@description 发送消息
+	@param  {String} targets personIDorFID，多个人员逗号分隔
+	@param  {String} type 终端类型
+	@param  {String} title 消息标题
+	@param  {String} url 消息url
+	@param  {Map} exts 消息扩展属性
+	@param  kind 消息类型（自己定义类型）
+	@returns {void}
+	@example sendMessage('接收者personID','default','消息标题','/UI2/demo/misc/message/message.m.w?process=/demo/components/process/ui2/ui2Process&activity=mainActivity',null,'消息类型')
+*/
+
+/**
+	@name MQTT.sendFlowMessage
+	@fn
+	@description 发送消息给流程的所有在办执行者
+	@param  {String} flowGuid 流程Guid
+	@param  {String} type 终端类型
+	@param  {String} title 消息标题
+	@param  {String} url 消息url
+	@param  {Map} exts 消息扩展属性
+	@param  kind 消息类型（自己定义类型）
+	@returns {void}
+	@example sendFlowMessage(tableData('BizRec','fFlowGuid'),null,'案卷即将超期，请尽快办理','/test/案卷督办.w?process=/test/案卷督办/duBanProcess&activity=mainActivity',null,'督办')
+*/
+
+/**
+	@name MQTT.sendTaskMessage
+	@fn
+	@description 发送消息给任务的所有在办执行者
+	@param  {String} taskGuid 流程Guid
+	@param  {String} type 终端类型
+	@param  {String} title 消息标题
+	@param  {String} url 消息url
+	@param  {Map} exts 消息扩展属性
+	@param  kind 消息类型（自己定义类型）
+	@returns {void}
+	@example sendFlowMessage(getContextParameter('@task'),null,'案卷即将超期，请尽快办理','/test/案卷督办.w?process=/test/案卷督办/duBanProcess&activity=mainActivity',null,'督办')
+*/
+
+/**
+	@name MQTT.sendBizRecMessage
+	@fn
+	@description 发送消息给任务的所有在办执行者
+	@param  {String} bizRecId 流程Guid
+	@param  {String} type 终端类型
+	@param  {String} title 消息标题
+	@param  {String} url 消息url
+	@param  {Map} exts 消息扩展属性
+	@param  kind 消息类型（自己定义类型）
+	@returns {void}
+	@example sendBizRecMessage(getContextParameter('@bizRecId'),null,'案卷即将超期，请尽快办理','/test/案卷督办.w?process=/test/案卷督办/duBanProcess&activity=mainActivity',null,'督办')
+*/
+
+
+/**
+	@name CommonFnExt.formatNumber
+	@fn
+	@description 格式化数字
+	@param  {Object} val 数字
+	@param  {Integer} scale 保留小数位
+	@returns {String}  格式化结果
+	@example formatNumbere()
+*/
+
+/**
+	@name CommonFnExt.signInfoIsNull
+	@fn
+	@description 会签是否已签名
+	@param  {String} objectId
+	@param  {Object...} key_value
+	@returns {boolean}  true或false
+	@example signInfoIsNull('oasys_countersign_fgld','fActivityID','act2')
+*/
+
+/**
+	@name CommonFnExt.makeSequenceCode
+	@fn
+	@description 产生通用编码
+	@param  {String} codeGuid 通用编码guid
+	@param  {String} concept 概念名
+	@param {Map}  nodeValues 参数键值对
+	@param {String}  relation 字段
+	@param {String}  idValue 数据id
+	@example 
+*/
+
+/**
+	@name CommonFnExt.getRandomDate
+	@fn
+	@description 随机日期
+	@param  {Date} start 开始日期
+	@param  {Date} end 结束日期
+	@returns {Date}  
+*/
+
+/**
+	@name CommonFnExt.getRandomInteger
+	@fn
+	@description 随机整数
+	@param  {Integer} start 开始日期
+	@param  {Integer} end 结束日期
+	@returns {Integer} 
+*/

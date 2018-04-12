@@ -1,0 +1,259 @@
+/**
+	@name CommonGis
+	@class
+	@model BIZ
+	@description GIS相关
+	@example
+	工作日函数定义，定义模块是“/base/core/logic/fn”，使用数据函数时，需要先引用（use或include）模块“/base/core/logic/fn”。
+*/
+
+
+
+/**
+	@name CommonGis.createParcelCode
+	@fn
+	@description 生成宗地编码
+	@param {String} featureGuidOfWorkLayer 来自工作图层
+	@returns {String}
+*/	
+	
+/**
+	@name CommonGis.createFigure
+	@fn
+	@description 生成图形(没有保存业务数据的情况)
+	@param {String} targetLayer oneMap逻辑图层名称
+	@param {String} features 要素json数组的字符串
+	@returns {boolean}
+*/	
+
+/**
+	@name CommonGis.CreateFigue2
+	@fn
+	@description 生成图形(业务表单保存的情况)
+	@param {String} dkKeyValue 地块主键值
+	@param {String} featureGuidName 
+	@param {String} wkid 
+	@param {String} layerName 图层名称
+	@param {String} otherAttr 其他需要更新的业务属性
+	@param {String} othrtWkid 需要投影的空间参考
+	@returns {boolean}
+*/
+
+/**
+	@name CommonGis.getPreViewGraph
+	@fn
+	@description 获取预览图形
+	@param {String} dkKeyValue 地块主键值
+	@param {String} featureGuidName 
+	@param {String} wkid 
+	@param {String} layerName 图层名称
+	@param {String} otherAttr 其他需要更新的业务属性
+	@returns {string}
+*/
+
+/**
+	@name CommonGis.initRegister
+	@fn
+	@description 初始登记
+	@param {String} featureGuidOfWorkLayer 来自工作图层
+	@returns {boolean}
+*/	
+
+/**
+	@name CommonGis.cutModify
+	@fn
+	@description 分割变更
+	@param {String} featureGuidOfWorkLayer 来自工作图层
+	@param {String} featureGuidOfResultLayer 来自成果图层
+	@param {boolean} isUpdateHistory 是否更新历史,最后一次将成果层推送到历史层设为true,其余设为false
+	@param {boolean} isUnion 是合并更新还是分割更新,合并更新时为true,其余设为false	
+	@returns {boolean}
+*/	
+
+
+/**
+	@name CommonGis.mergeModify
+	@fn
+	@description 合并变更
+	@param {String} featureGuidOfWorkLayer 来自工作图层
+	@param {String} featureGuidOfResultLayer 来自成果图层
+	@returns {boolean}
+*/	
+
+
+/**
+	@name CommonGis.logoutRegister
+	@fn
+	@description 宗地注销
+	@param {String} featureGuidOfWorkLayer 需要注销的featureGUID
+	@param {String} isCancellRegistration  是否注销登记
+	@returns {boolean}
+*/	
+
+
+/**
+	@name CommonGis.getLayer
+	@fn
+	@description 获取目标图层的json字符串
+	@param {String} targetBizLayer 目标图层业务名
+	@param {String} targetBizTables 目标业务图层的定位条件，允许为'',表示遍历所有业务图层对应的物理图层
+	@param {String} outFields 目标业务图层返回的字段列表，用逗号(,)隔开，如：'field1,field2,field3'
+	@param {Object} wkid 目标图层的空间参考，可以是字符串、整数等
+	@param {Boolean} returnOverlayGeometry   是否返回目标占压相交图形数据
+	@param {Boolean} returnOverlayPartition  是否返回目标相交部分（分隔区域）几何图形，返回结果为数组
+	@param {Boolean} returnOverlayArea       是否返回占压面积（重叠区域面积总和）
+	@param {Boolean} returnOutsideGeometry   是否返回源要素未占压部分的几何图形
+	@param {Boolean} returnOutsidePartition  是否返回源要素超出部分（分隔区域）的几何图形，返回结果为数组
+	@param {Boolean} returnOutsideArea       是否返回源要素未重叠的面积
+	@param {Boolean} returnSourceFeatureGeometry  是否返回源要素几何图形
+	@param {Boolean} returnTargetFeatureGeometry  是否返回占压到的目标要素的（整个）几何图形
+	@param {Boolean} returnSpheroidArea      是否使用椭球面积计算
+	
+	
+	@returns {boolean}
+*/	
+
+
+/**
+	@name CommonGis.getLayers
+	@fn
+	@description    获取多个目标图层的jsonArray（数组）字符串
+	@param {Object} listLayers  需要赋值的目标图层列表对象（为一个数组）
+	@param {Object} layer       需要增加的目标图层对象，由 函数getLayer产生
+	@returns {Object}          返回需要的目标图层列表
+*/	
+
+
+
+/**
+	@name CommonGis.getCommonAnalysisParam
+	@fn
+	@description    获得通用占压分析的运行参数
+    <parameter type="String" name="sourceBizLayerName"/>  
+    <parameter type="String" name="type"/>  
+    <parameter type="Object" name="obj"/>  
+    <parameter type="Object" name="wkid"/>  
+    <parameter type="Object" name="targetBizLayerInfos"/>  
+    <parameter type="String" name="analysisType"/>  
+    <parameter type="String" name="useConvert"/> 
+	@param {Object} sourceBizLayerName  源图层对象定义
+	@param {String} type                取得源要素的方式，'JSON' 直接传入Geometry的几何图形json数据，
+	                                                     'FIND' 根据图层名、定位图层条件和过滤条件查找源要素
+	                                                     'DKIDS' 根据传入的地块id的，来获取源要素，  
+	@param {Object} obj                 根据type的值，确定obj的值
+                                                   type为 'JSON' obj为图形的json对象，
+	                                                     'FIND' obj 为：  {locate:'定位条件',filter:[file1:'',field2:'']}
+	                                                     'DKIDS' obj 为  ：  'dkbh1,dkbh2,dkbh3'  
+	@param {Object} wkid                目标图层的空间参考，可以是字符串、整数等
+	@param {Object} targetBizLayerInfos  需要赋值的目标图层列表对象（为一个数组），使用getLayers函数获得
+	@param {String} analysisType         分析类型  '0' 或 ''，表示平行占压，'1' 表示迭代占压 
+	@param {String} useConvert           使用加密转换，'0' 或 ''，表示需要加密转换，'1' 表示使用加密转换
+	@returns {Object}                    返回需要的占压分析参数对象，此返回值，用于做占压分析的入参
+*/	
+
+/**
+	@name CommonGis.commonAnalysis
+	@fn
+	@description    执行通用占压分析，返回结果数据
+	@param {Object} param  执行分析的参数，由函数getCommonAnalysisParam取得
+	@returns {Object}          返回占压结果数据json对象
+*/	
+
+/**
+	@name CommonGis.CreateFeatureByGeometryList
+	@fn
+	@description    创建要素至指定目标图层
+	@param {Object} param  list_Geometry  需要创建的要素列表，支持多要素创建；
+	@param {String} param  targetLayer    目标图层的物理图层名；
+	@param {String} param  createType     创建方式； 此参数为可选参数，用于表示当目标图层的当前创建位置存在要素时的处理方式
+	                                                                                                     不传：无条件创建 
+	                                      '0':无条件创建                                                               
+	                                      '1'：删除当前位置的目标要素后创建；
+	                                      '2'：切割当前位置的目标要素后创建；
+	                                      '3'：不创建；     返回false                                                                        
+	@param {String} param  workspaceIndex   目标物理图层所在的数据库信息，当创建方式为空时，可空（空='0',表示第一数据库信息）否则必须输入，取值为序号，'0'、'1'等  
+	@returns {Boolean}     返回是否创建成功；
+	@example 
+	CreateFeatureByGeometryList((:param),'GH_T_WORKLAYER_PRE','0','0')
+*/	
+
+/**
+	@name CommonGis.deleteFeatures
+	@fn
+	@description    删除要素，条件为给定模式，指定一个字段的取值范围，作为删除要素的条件
+	@param {String} param  table  要删除图层的物理表名
+	@param {String} param  workspaceIndex   目标物理图层所在的数据库信息，可空（空='0',表示第一数据库信息）否则必须输入，取值为序号，'0'、'1'等  
+	@param {String} param  filterKey  过滤条件的物理字段名，只能输入一个字段名
+	@param {Object} param  filterValue  指定字段的取值范围，支持List和拼串逗号隔开，两种方式
+	@returns {Boolean}        返回是否删除成功；
+	@example 
+	deleteFeatures('GH_T_WORKLAYER_PRE','0','FPLOTID ' ,(:rowid))
+*/	
+
+/**
+	@name CommonGis.deleteFeaturesByCondi
+	@fn
+	@description    删除要素，条件为自定义where条件，不可为空，字段为物理字段名
+	@param {String} param  table  要删除图层的物理表名
+	@param {String} param  workspaceIndex   目标物理图层所在的数据库信息，可空（空='0',表示第一数据库信息）否则必须输入，取值为序号，'0'、'1'等  
+	@param {String} param  where  SQL语句的where条件，不可为空，字段为物理字段名
+	@returns {Boolean}        返回是否删除成功；
+*/	
+
+
+/**
+	@name CommonGis.queryFeatures
+	@fn
+	@description    以物理图层的属性为条件，进行查询
+	@param {String} param  table  要查询图层的物理表名
+	@param {String} param  workspaceno  该物理图层所在的数据库信息，可空（空='0',表示第一数据库信息），取值为序号，'0'、'1'等
+	@param {String} param  outFields  需要返回的属性列表，用逗号隔开，null 或者 '' 表示返回所有字段
+	@param {String} param  orderByFields  返回结果的排序字段，可空
+	@param {String} param  returnGeometry  是否需要返回图形数据，'true'  'false'
+	@param {String} param  where  SQL语句的where条件，字段为物理字段名
+	@returns {String}        返回满足条件的要素列表的json字符串；
+*/	
+/**
+	@name CommonGis.queryFeaturesBiz
+	@fn
+	@description    以图层的属性为条件，进行查询
+	@param {String} param  bizLayer  要查询图层的名称
+	@param {String} param  workspaceno  该物理图层所在的数据库信息，可空（空='0',表示第一数据库信息），取值为序号，'0'、'1'等
+	@param {String} param  outFields  需要返回的属性列表，用逗号隔开，null 或者 '' 表示返回所有字段
+	@param {String} param  orderByFields  返回结果的排序字段，可空
+	@param {String} param  returnGeometry  是否需要返回图形数据，'true'  'false'
+	@param {String} param  where  SQL语句的where条件，字段为物理字段名
+	@returns {String}        返回满足条件的要素列表的json字符串；
+*/	
+/**
+	@name CommonGis.updateFeaturesAttributes
+	@fn
+	@description    更新目标物理图层的属性信息
+	@param {Object} param  feature  要素json对象，只需包含attributes，不需要 geometry；作为更新数据的取值；
+	@param {String} param  table  要更新图层的物理表名
+	@param {String} param  workspaceIndex   目标物理图层所在的数据库信息，可空（空='0',表示第一数据库信息）否则必须输入，取值为序号，'0'、'1'等  
+	@param {String} param  where  SQL语句的where条件，不可为空，字段为物理字段名
+	@returns {Boolean}        返回是否更新成功；
+*/	
+/**
+	@name CommonGis.createFigure
+	@fn
+	@description    创建要素至指定目标图层
+	@param {Object} param  list_Geometry  需要创建的要素列表，支持多要素创建；
+	@param {String} param  targetLayer    目标图层的物理图层名；
+	@param {Object} param  otherWkid      需要转换的目标投影参数；
+	@param {String} param  createType     创建方式； 此参数为可选参数，用于表示当目标图层的当前创建位置存在要素时的处理方式
+*/
+/**
+	@name CommonGis.addFeaturesByTable
+	@fn
+	@description    临时表生成图形
+	@param {String} param  srcTableId     临时表名ID；
+	@param {String} param  targetLayer    生成图层名称；
+	@param {String} param  options       创建方式； 此参数为可选参数，用于表示当目标图层的当前创建位置存在要素时的处理方式
+	                                                                                                     不传：无条件创建 
+	                                      '0':无条件创建                                                               
+	                                      '1'：删除当前位置的目标要素后创建；
+	                                      '2'：切割当前位置的目标要素后创建；
+	                                      '3'：不创建；     返回false  
+*/	         

@@ -1,0 +1,146 @@
+/**
+	@name XMLFn
+	@class
+	@model BIZ
+	@description XML函数
+	@example
+	XML函数定义，定义模块是“/base/core/logic/fn”，使用数据函数时，需要先引用（use或include）模块“/base/core/logic/fn”。
+*/
+
+/**
+	@name XMLFn.createDocument
+	@fn
+	@description 创建xml文档
+	@param  {String} text xml格式字符串(可以为空)
+	@returns {Object} 返回Document 
+	@example createDocument("") 新创建一个Document
+	createDocument("<?xml version=\"1.0\" encoding=\"UTF-8\"?><root><test>测试</test></root>") 格式化 返回一个Document
+*/
+
+/**
+	@name XMLFn.addNode
+	@function
+	@description 添加节点
+	@param {Object} doc Document
+	@param {String} name  节点名称 
+	@param {Object} value  节点值 （可以为空）
+	@returns {Object} 返回Element
+	@example 
+*/
+
+/**
+	@name XMLFn.setNodeText
+	@function
+	@description 设置节点值
+	@param {Object} node 节点
+	@param {String} text 节点值
+	@returns {Object} 返回Element
+	@example
+*/	
+
+
+/**
+	@name XMLFn.addAttribute
+	@function
+	@description 为节点添加属性
+	@param {Object} node Element
+	@param {String} name  节点名称 
+	@param {Object} value 属性值 （可以为空）
+	@returns {Object} 返回Element
+	@example
+*/
+
+/**
+	@name XMLFn.setNodeCDATA
+	@function
+	@description 为节点添加属性值
+	@param {Object} node Element
+	@param {Object} value 属性值
+	@returns {Object} 返回Element
+	@example
+*/
+	
+/**
+	@name XMLFn.asXML
+	@function
+	@description xml格式转xml字符串
+	@param {Object} node
+	@returns {String} 返回xml字符串
+	@example 
+*/
+
+/**
+	@name XMLFn.getRootElement
+	@function
+	@description 获取根节点
+	@param {Object} doc Document
+	@returns {String} 返回Element
+	@example getRootElement(createDocument("<?xml version=\"1.0\" encoding=\"UTF-8\"?><root><test>测试</test></root>"))
+*/
+
+/**
+	@name XMLFn.getElements
+	@function
+	@description 获取子节点
+	@param {Object} ele
+	@param {String} name 节点名称
+	@returns {Object} 返回List
+	@example getElements(Element对象)
+*/
+
+/**
+	@name XMLFn.getElementListSize
+	@function
+	@description 获取子List的size
+	@param {Object} elementList List对象
+	@returns {Integer} 返回List的size
+	@example getElementListSize(getElements(Element对象))
+*/
+
+/**
+	@name XMLFn.getElementFromElementList
+	@function
+	@description 从节点list中获取节点
+	@param {Object} elementList List对象
+	@param {Integer} i
+	@returns {Object} 返回Element
+	@example getElementFromElementList(getElements(Element对象),0)
+*/
+
+/**
+	@name XMLFn.getElement
+	@function
+	@description 获取子节点
+	@param {Object} ele Element对象
+	@param {String} name
+	@returns {Object} 返回Element
+	@example 
+*/
+
+/**
+	@name XMLFn.getChildElementText
+	@function
+	@description 获取子节点值
+	@param {Object} ele Element对象
+	@param {String} name
+	@returns {String} 返回子节点值
+	@example 
+*/
+
+/**
+	@name XMLFn.getElementText
+	@function
+	@description 获取节点值
+	@param {Object} ele Element对象
+	@returns {String} 返回节点值
+	@example 
+*/
+
+/**
+	@name XMLFn.getAttributeValue
+	@function
+	@description 获取节点属性值
+	@param {Object} ele Element对象
+	@returns {String} 返回节点值
+	@example 
+*/

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.justep.com/model">
+	<use>/system/logic/action</use>
+	<use>/base/core/material/data</use>
+<use>/base/core/flow/logic/action</use><use>/base/core/flow/logic/code</use></model>

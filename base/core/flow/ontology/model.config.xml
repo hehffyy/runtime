@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://www.justep.com/model">
+
+	<include>/system/ontology</include>
+	<include>/base/system/ontology</include>
+	<use>/base/core/ext</use>
+	<use>/base/core/logic/fn</use>
+	<!-- /base/core/logic/fn include了/system/logic/fn，无需use -->
+	<!-- <use>/system/logic/fn</use> -->
+</model>
