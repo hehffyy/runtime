@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model xmlns="http://www.justep.com/model">
+	<use>/house/FcTables/data</use>
+	<use>/house/FcTables/logic/action</use>
+	<use>/house/FcTables/logic/code</use>
+	<use>/system/logic/fn</use>
+	<use>/system/logic/action</use>
+	<use>/system/logic/code</use>
+</model>
