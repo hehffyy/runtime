@@ -1,0 +1,8 @@
+delete from Portal2Profiles t;
+delete from Portal2ProfileManager t;
+
+--初始化门户------------------------------------------------------------------------
+insert into Portal2Profiles t (t, t.version, t.sPersonID, t.sFunctree, t.sPortal, t.sOther, t.sPublishType, t.sThemeName, t.sThemeActivity) values( 'C55DF629BCC00001742C17606A601CC9', 0, 'PSN01',  '{"shortcut":["EF653FB494495E68E7054A9BD7D53D56","65B47C24FF1EDA1F6B57B84AB8E0B14F"]}', '{"pages":[{"widgets":[{"dock":0,"widgetId":"B01E9ED9B06E6BD6AC981D25818FBB23","position":3},{"dock":1,"widgetId":"FD9AA20E2F900D1A46B7EC61A544D3AC","position":0}],"layout":"l1","type":"widget","title":"个人信息","enable":true}]}', '{"quick-func-list-opened":true,"opened-func-list-opened":false,"func-map-opened":true}', 'system', '默认布局', 'activity');
+
+insert into Portal2ProfileManager t (t, t.version, t.sThemeID, t.sOrgID, t.sThemeActivity) values( 'B21085E329994C14A3A69C8EB21E9B25', 0, 'C55DF629BCC00001742C17606A601CC9', 'ORG01', null);
+
