@@ -1,0 +1,76 @@
+/**
+	@name OrgExtFn.findOrgChildren3
+	@function
+	@description 获取指定组织的子
+	@param {Object} org 组织单元; 
+			允许两种情况: 
+				单个组织单元ID或FID(String类型); 
+				多个组织单元ID或FID(String类型)形成的List;
+	@param {String} childCondition 子节点的约束条件; 
+			可以使用变量，变量的值在后一个参数中指定; 
+			在条件中, 使用"org"表示子节点本身, 'org.属性名称'表示子节点的属性, 
+	 		例如: org.sName='X5开发部'
+	@param {Map} params childCondition中使用的变量的值, 可以为null
+	@param {Boolean} includeCurrentPerson 是否包含当前操作者
+	@param {Boolean} includeAllChildren 是否包含所有子孙
+	@param {Boolean} includePersonMember 是否取到人员成员
+	@returns {List<com.justep.system.opm.OrgUnit>}   
+	@example 
+		findOrgChildren3(currentDeptID(), '', null, true, true, true)
+	@see com.justep.system.opm.OrgUtils.findOrgChildren2	
+*/	
+
+/**
+	@name OrgExtFn.getCurrentPersonInfo
+	@fn
+	@description 获取当前人信息
+	@param  {String} colName  SA_OPPerson表字段（字符串类型）
+	@returns {String}  字段值
+	@example getCurrentPersonInfo('sGlobalSequence') 返回全局顺序
+*/
+
+/**
+	@name OrgExtFn.getCurrentPersonPostName
+	@fn
+	@description 获取当前人职务
+	@returns {String}  职务
+	@example getCurrentPersonPostName()
+*/
+
+/**
+	@name OrgExtFn.getCurrentPersonGlobalSequence
+	@fn
+	@description 获取当前人全局顺序
+	@returns {String}  全局顺序
+	@example getCurrentPersonGlobalSequence()
+*/
+
+/**
+	@name OrgExtFn.currentAreaIdOrName
+	@fn
+	@description 当前人员成员所属区域
+	@param  {Boolean} idOrName  
+	@returns {String} true: 返回区域编号,false 返回区域名称
+*/
+
+/**
+	@name OrgExtFn.findOrgUnitsHasRoleByCodeExt
+	@fn
+	@description 获取当前层级属于指定角色Code的组织单元
+	@param  {String} roleCode 角色code
+	@param  {Object} inOrg 组织单元ID
+	@param  {String} isPersonMember 是否包含人员成员
+	@returns {List} List<OrgUnit>
+	@example findOrgUnitsHasRoleByCodeExt('角色code',currentDeptID(),true)
+*/
+
+
+/**
+	@name OrgExtFn.getHigherLevelArea
+	@fn
+	@description 上级区域
+	@param  {Boolean} idOrName  
+	@returns {String} true: 返回区域编号，false 返回区域名称
+*/
+
+

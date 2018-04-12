@@ -1,0 +1,40 @@
+/**
+	@name ModelExtFn
+	@class
+	@model BIZ
+	@description 上下文函数
+	@example
+	
+*/
+
+/**
+	@name ModelExtFn.currentProcessBizName
+	@fn
+	@description 当前流程业务名称，如果为空返回流程名称。
+	@returns {String}
+	@example currentProcessBizName() 
+*/
+
+/**
+	@name ModelExtFn.getProcessBizId
+	@fn
+	@description 获得流程业务ID
+	@returns {String}  流程业务ID（字符串）
+	@example getProcessBizId()
+*/
+
+/**
+	@name ModelExtFn.getProcessBizLevel
+	@fn
+	@description 获得流程业务级别
+	@returns {String}  流程业务级别（字符串）
+	@example getProcessBizId()
+*/
+
+/**
+	@name ModelExtFn.currentActivityName
+	@fn
+	@description 获取当前Activity的名称
+	@returns {String}  获取当前Activity的名称(例如：act1)
+	@example currentActivityName()
+*/

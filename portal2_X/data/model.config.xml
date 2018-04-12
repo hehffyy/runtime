@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<model xmlns="http://www.justep.com/model">
+  <include>/portal2/ontology</include>
+  <use>/system/logic/fn</use>
+  <include>/system/ontology</include>
+  <include>/system/data</include>
+</model>
