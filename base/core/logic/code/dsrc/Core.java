@@ -36,7 +36,6 @@ import com.justep.system.context.ContextHelper;
 import com.justep.system.data.ColumnMetaData;
 import com.justep.system.data.DatabaseProduct;
 import com.justep.system.data.KSQL;
-import com.justep.system.data.Row;
 import com.justep.system.data.SQL;
 import com.justep.system.data.Table;
 import com.justep.system.data.TableMetaData;
@@ -159,7 +158,7 @@ public class Core {
 		try {
 			if (Utils.isNotEmptyString(dataModels)) {
 				String[] args = dataModels.split(",");
-				com.butone.x5.model.element.Model model = new com.butone.x5.model.element.Model();
+				com.butone.x5.model.Model model = new com.butone.x5.model.Model();
 				for (String arg : args) {
 					if (!model.getIncludeList().contains(arg))
 						model.getIncludeList().add(arg);
@@ -373,8 +372,8 @@ public class Core {
 							tableName = table.attributeValue("name");
 						}
 					}
-					if (!tables.contains(tableName)){
-						if(checkStatus)
+					if (!tables.contains(tableName)) {
+						if (checkStatus)
 							waitCheckTables.add(tableName);
 						else
 							tables.add(tableName);
@@ -397,18 +396,19 @@ public class Core {
 	 * 检查工作表是否已创建物理表
 	 * @return
 	 */
-	private static void checkTableIsCreated(List<String> waitCheckTables,List<String> tables){
+	private static void checkTableIsCreated(List<String> waitCheckTables, List<String> tables) {
 		HashMap<String, String> sqlMap = new HashMap<String, String>();
-		String sql = "select wm_concat(table_name) from all_tables where table_name in ('"+StringUtils.join(waitCheckTables.toArray(),"','").toUpperCase()+"')";
+		String sql = "select wm_concat(table_name) from all_tables where table_name in ('"
+				+ StringUtils.join(waitCheckTables.toArray(), "','").toUpperCase() + "')";
 		sqlMap.put(DatabaseProduct.DEFAULT.name(), sql);
 		Table tab = SQL.select(sqlMap, null, FlowBizConsts.DATA_MODEL_SYSTEM);
-		String tableNames = tab.iterator().next().getString(0)+",";
-		if(Utils.isNotEmptyString(tableNames)){
-			for(String tableName:waitCheckTables){
-				if(tableNames.indexOf(tableName.toUpperCase()+",")==-1)
+		String tableNames = tab.iterator().next().getString(0) + ",";
+		if (Utils.isNotEmptyString(tableNames)) {
+			for (String tableName : waitCheckTables) {
+				if (tableNames.indexOf(tableName.toUpperCase() + ",") == -1)
 					tables.add(tableName);
 			}
-		} else 
+		} else
 			tables.addAll(waitCheckTables);
 	}
 }
