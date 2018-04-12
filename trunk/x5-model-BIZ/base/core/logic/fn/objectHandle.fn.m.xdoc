@@ -1,0 +1,114 @@
+/**
+	@name ObjectHandleFn
+	@class
+	@model BIZ
+	@description objectHandle函数
+	@example
+	objectHandle函数定义，定义模块是“/base/core/logic/fn”，使用数据函数时，需要先引用（use或include）模块“/base/core/logic/fn”。
+*/
+
+/**
+	@name ObjectHandleFn.ifNull
+	@fn
+	@description 字符处理函数
+	@param  {Object} value 参数
+	@param  {Object} value1 参数1
+	@returns {Object} 如果null返回value1，否则返回value
+	@example ifNull('','张三')
+*/
+
+/**
+	@name ObjectHandleFn.decode
+	@fn
+	@description decode
+	@param  {String} params 参数字符串
+	@returns {Object} 
+	@example 
+*/
+
+/**
+	@name ObjectHandleFn.unEqual
+	@fn
+	@description 判断两个对象是否相等
+	@param  {String} obj1  对象1
+	@param  {String} obj2  对象2
+	@returns {Boolean} 不相等返回true，否则返回false
+	@example unEqual('aaa','bbb')
+*/
+
+/**
+	@name ObjectHandleFn.isNull
+	@fn
+	@description 是否为空
+	@param  {Object} obj object对象
+	@returns {Boolean} 为空返回true，否则返回false
+	@example isNull('')
+*/
+
+/**
+	@name ObjectHandleFn.requireExpre
+	@fn
+	@description 业务规则必填表达式
+	@param  {String} tableId  工作表id
+	@param  {String} fields  字段英文名，多个逗号隔开
+	@returns {Boolean}  生效返回true，否则返回false
+	@example  requireExpre('t_ywslb','ywmc,ywlx')
+*/
+
+/**
+	@name ObjectHandleFn.requireRuleTip
+	@fn
+	@description 简易必填规则提示
+	@param  {String} tableId  工作表id
+	@param  {String} fields  字段英文名，多个英文逗号隔开
+	@param  {String} fieldNames 字段中文名，多个英文逗号隔开
+	@returns {String} 返回提示信息，
+	@example requireExpre('t_ywslb','ywmc,ywlx','业务名称,业务类型')
+*/
+
+/**
+	@name ObjectHandleFn.newLine
+	@fn
+	@description 字符换行
+	@returns {String} 换行符
+	@example newLine()
+*/
+
+/**
+	@name ObjectHandleFn.quotedStr
+	@fn
+	@description 字符串两端增加单引号
+	@param  {String} str
+	@returns {String} 返回带单引号的字符串
+	@example quotedStr('1111111')
+*/
+
+/**
+	@name ObjectHandleFn.dQuotedStr
+	@fn
+	@description 字符串两端增加双引号
+	@param  {String} str
+	@returns {String} 返回带双引号的字符串
+	@example dQuotedStr('1111111')
+*/
+
+/**
+	@name ObjectHandleFn.attachNames
+	@fn
+	@description 获取附件字段所有附件名称
+	@param  {String} docIds 附件文档doIds
+	@returns {String} 文档名称字符串，多个英文分号隔开
+	@example attachNames('文档docIds')
+*/
+
+/**
+	@name ObjectHandleFn.invokeStaticMethod
+	@fn
+	@description 调用java静态方法
+	@param  {String} className 类名
+	@param  {String} method 方法名称
+	@param  {List} argumentTypes 参数类型
+	@param  {List} argumentValues 参数值
+	@returns {Object} 返回方法的返回值
+	@example invokeStaticMethod("com.justep.util.Utils", "isNotEmptyString", list("java.lang.String"), list("123"))
+*/

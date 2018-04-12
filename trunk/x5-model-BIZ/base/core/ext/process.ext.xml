@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<model xmlns="http://www.justep.com/model">
+	<!-- 流程 -->
+	<ext owner="process" name="coopProcess" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">协同业务</label>
+	</ext>
+	<ext owner="process" name="viewActivity" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">浏览环节</label>
+	</ext>
+	<ext owner="process" name="bizKind" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">业务类型</label>
+	</ext>
+	<ext owner="process" name="bizOrgLevel" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">业务机构级别</label>
+	</ext>
+	<ext owner="process" name="bizId" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">业务编号</label>
+	</ext>
+	<ext owner="process" name="bizName" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">业务名称</label>
+	</ext>
+	<ext owner="process" name="includeReceivers" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">是否包含接收环节</label>
+	</ext>
+	<ext owner="process" name="isBizCoop" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">是否业务协同</label>
+	</ext>
+	<ext owner="process" name="codeDefines" namespace="http://www.butone.com"
+		type="Map">
+		<label language="zh_CN">重载编码定义</label>
+	</ext>
+	<ext owner="process" name="limitDays" namespace="http://www.butone.com"
+		type="Integer">
+		<label language="zh_CN">限制天数</label>
+	</ext>
+	<ext owner="process" name="limitKind" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">工作日|自然日</label>
+	</ext>
+	<ext owner="process" name="limitDateExpr" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">限制日期(表达式)</label>
+	</ext>
+	<ext owner="process" name="activityGroup" namespace="http://www.butone.com"
+		type="Map">
+		<label language="zh_CN">环节分组</label>
+	</ext>
+	<ext owner="process" name="limitEffectActivity" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">时限生效环节(流转时计算，如果未设置启动时计算)</label>
+	</ext>
+	<ext owner="process" name="limitStartDateExpr" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">限办开始时间表达式</label>
+	</ext>
+	<ext owner="process" name="silenceFinish" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">静默办结</label>
+	</ext>
+	<ext owner="process" name="flowViewActivity" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">案卷浏览环节</label>
+	</ext>
+	<ext owner="process" name="finishKind" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">默认办结类型(fkCertification、fkNormal)</label>
+	</ext>
+	<ext owner="process" name="oldExecutorDialog" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">旧版执行者选择框</label>
+	</ext>
+	<!-- 流程环节 -->
+	<ext owner="business-activity" type="List" name="bizOperations"
+		namespace="http://www.butone.com">
+		<label language="zh_CN">业务操作</label>
+	</ext>
+	<ext owner="business-activity" name="codeFields" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">编码字段</label>
+	</ext>
+	<ext owner="business-activity" name="isCoopReceiver" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">是否接收环节</label>
+	</ext>
+	<ext owner="business-activity" name="forbidWithdraw" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">禁止跨环节取回</label>
+	</ext>
+	<ext owner="business-activity" name="mobileEnable" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">启用移动端</label>
+	</ext>
+	<ext owner="business-activity" name="approveEntryProcess"
+		namespace="http://www.butone.com" type="String">
+		<label language="zh_CN">业务协同环节对应的业务过程的入口流程</label>
+	</ext>
+	<ext owner="business-activity" name="bizRules" namespace="http://www.butone.com"
+		type="List">
+		<label language="zh_CN">业务规则</label>
+	</ext>
+	<ext owner="business-activity" name="logicPlugins" namespace="http://www.butone.com"
+		type="List">
+		<label language="zh_CN">业务组件</label>
+	</ext>
+	<ext owner="business-activity" name="uiLogicPlugins" namespace="http://www.butone.com"
+		type="List">
+		<label language="zh_CN">业务UI组件</label>
+	</ext>
+	<ext owner="business-activity" name="materialPermissions"
+		namespace="http://www.butone.com" type="Map">
+		<label language="zh_CN">业务组件</label>
+	</ext>
+	<ext owner="business-activity" name="limitDays" namespace="http://www.butone.com"
+		type="Integer">
+		<label language="zh_CN">限制天数</label>
+	</ext>
+	<ext owner="business-activity" name="limitKind" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">工作日|自然日</label>
+	</ext>
+	<ext owner="business-activity" name="limitDateExpr" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">限制日期(表达式)</label>
+	</ext>
+	<ext owner="business-activity" name="group" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">所属分组</label>
+	</ext>
+	<ext owner="business-activity" name="forms" namespace="http://www.butone.com"
+		type="List">
+		<label language="zh_CN">表单</label>
+	</ext>
+	<ext owner="business-activity" name="batchOperationOption"
+		namespace="http://www.butone.com" type="Map">
+		<label language="zh_CN">批量操作选项</label>
+	</ext>
+	<ext owner="business-activity" name="bizOperationForms" namespace="http://www.butone.com"
+		type="Map">
+		<label language="zh_CN">业务操作表单</label>
+	</ext>
+	<ext owner="business-activity" name="asyncAdvance" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">异步流转</label>
+	</ext>
+	<ext name="multiTransferRule" namespace="http://www.butone.com"
+		owner="business-activity" type="Boolean">
+		<label language="zh_CN">多移交规则</label>
+	</ext>
+	<!-- 静态环节 -->
+	<ext owner="static-activity" name="codeFields" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">编码字段</label>
+	</ext>
+	<ext owner="static-activity" name="controlTable" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">主控概念</label>
+	</ext>
+	<ext owner="static-activity" name="forms" namespace="http://www.butone.com"
+		type="List">
+		<label language="zh_CN">表单</label>
+	</ext>
+	<!-- 自动环节 -->
+	<ext owner="auto-activity" name="sendToCoopProcesses" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">流程协作(发送数据到)</label>
+	</ext>
+	<!-- 执行规则 -->
+	<ext owner="execute-rule" name="label" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">规则名称</label>
+	</ext>
+	<ext owner="execute-rule" name="single" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">单选</label>
+	</ext>
+	<!-- 回退规则 -->
+	<ext owner="back-rule" name="label" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">规则名称</label>
+	</ext>
+	<!-- 启动规则 -->
+	<ext owner="start-rule" name="label" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">规则名称</label>
+	</ext>
+	<!-- 移交规则 -->
+	<ext owner="transfer-rule" name="label" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">规则名称</label>
+	</ext>
+	<ext owner="transfer-rule" name="single" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">单选</label>
+	</ext>
+	<!-- 流转规则 -->
+	<ext owner="advance-rule" name="label" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">规则名称</label>
+	</ext>
+	<!-- 概念 -->
+	<!-- has-relation扩展属性 -->
+	<ext owner="has-relation" name="taskField" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">任务中心字段</label>
+	</ext>
+	<ext owner="has-relation" name="queryField" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">查询字段</label>
+	</ext>
+	<!-- 设计器单位控制字段过滤相同类型的单位字段 -->
+	<ext owner="has-relation" name="unitType" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">单位类型</label>
+	</ext>
+	<ext owner="has-relation" name="codeDef" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">编码定义</label>
+	</ext>
+	<ext owner="has-relation" name="orgSelectExtInfo" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">组织机构字段</label>
+	</ext>
+	<!-- relation扩展属性 for 运行期 -->
+	<ext owner="relation" name="codeDef" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">编码定义</label>
+	</ext>
+	<ext owner="relation" name="taskField" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">任务中心字段</label>
+	</ext>
+	<ext owner="relation" name="queryField" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">查询字段</label>
+	</ext>
+	<!-- 设计器单位控制字段过滤相同类型的单位字段 -->
+	<ext owner="relation" name="unitType" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">单位类型</label>
+	</ext>
+	<ext owner="relation" name="codeDef" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">编码定义</label>
+	</ext>
+	<ext owner="relation" name="orgSelectExtInfo" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">组织机构字段</label>
+	</ext>
+	<!-- elasticSearch扩展 -->
+	<ext owner="concept" name="esEnableAll" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">是否启用_all</label>
+	</ext>
+	<ext owner="concept" name="esStoreAll" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">是否存储_all</label>
+	</ext>
+	<ext owner="relation" name="esType" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">数据类型</label>
+	</ext>
+	<ext owner="relation" name="esSource" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">是否添加到原始文档中</label>
+	</ext>
+	<ext owner="relation" name="esStore" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">是否独立存储</label>
+	</ext>
+	<ext owner="relation" name="esIncludeInAll" namespace="http://www.butone.com"
+		type="Boolean">
+		<label language="zh_CN">是否添加到_all属性</label>
+	</ext>
+	<ext owner="relation" name="esIndex" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">no=不建索引,not_analyzed=不分析,analyzed=分析</label>
+	</ext>
+	<ext owner="relation" name="esAnalyzer" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">分词器</label>
+	</ext>
+	<!-- static运行期无法读出 -->
+	<!-- <ext owner="activity" name="codeFields" namespace="http://www.butone.com" -->
+	<!-- type="String"> -->
+	<!-- <label language="zh_CN">编码字段</label> -->
+	<!-- </ext> -->
+	<ext owner="listener" name="pluginUrls" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">逻辑插件urls</label>
+	</ext>
+	<ext owner="action" name="signDataFields" namespace="http://www.butone.com"
+		type="String">
+		<label language="zh_CN">签名数据字段的signImage处理</label>
+	</ext>
+	<!-- 流程环节 -->
+	<ext owner="procedure" type="List" name="targetActivities"
+		namespace="http://www.butone.com">
+		<label language="zh_CN">目标环节</label>
+	</ext>
+	<ext owner="procedure" type="List" name="targetEvents" namespace="http://www.butone.com">
+		<label language="zh_CN">目标事件</label>
+	</ext>
+</model>

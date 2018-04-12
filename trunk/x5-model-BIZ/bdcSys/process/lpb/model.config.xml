@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model xmlns="http://www.justep.com/model">
+	<use>/bdcSys/data</use>
+	<use>/bdcSys/logic/action</use>
+	<use>/bdcSys/logic/code</use>
+	<use>/system/logic/fn</use>
+	<use>/system/logic/action</use>
+	<use>/system/logic/code</use>
+</model>

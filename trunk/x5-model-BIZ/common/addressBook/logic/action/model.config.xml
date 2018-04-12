@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><model xmlns="http://www.justep.com/model">
+	<use>/system/logic/action</use>
+	<use>/common/addressBook/data</use>
+<use>/system/ontology</use></model>

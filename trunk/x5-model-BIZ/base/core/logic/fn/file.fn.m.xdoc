@@ -1,0 +1,18 @@
+/**
+	@name FileFn
+	@class
+	@model BIZ
+	@description 导入
+	@example
+	工作日函数定义，定义模块是“/base/core/logic/fn”，使用数据函数时，需要先引用（use或include）模块“/base/core/logic/fn”。
+*/
+
+/**
+	@name FileFn.loadExcelToTable
+	@fn
+	@description 加载Excel到Table中
+	@param  InputStream excel excel输入流, Object mappingConfig 映射, Table table 表
+	@returns {void}
+	@example loadExcelToTable((:_importFileStream),(:mapping),tableInstance('GH_WHCJZB'))
+*/
+

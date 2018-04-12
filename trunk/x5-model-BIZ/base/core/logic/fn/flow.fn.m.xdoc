@@ -1,0 +1,149 @@
+/**
+	@name FlowFn
+	@class
+	@model BIZ
+	@description 流程业务操作函数
+	@example
+	
+*/
+
+/**
+	@name FlowFn.bzgz
+	@fn
+	@description 补正告知
+	@param  {String} bizRecId 案卷编号
+	@param  {String} taskId 任务编号
+	@param  {String} reason 原因
+	@returns 
+	@example bzgz('','','') 
+*/
+
+/**
+	@name FlowFn.bzsl
+	@fn
+	@description 补正受理
+	@param  {String} bizRecId 案卷编号
+	@returns 
+	@example bzsl('') 
+*/
+
+
+
+/**
+	@name FlowFn.apprizeAbort
+	@fn
+	@description 补交不来办结
+	@param  {String} bizRecId 案卷编号
+	@param  {String} reason 原因
+	@returns 
+	@example apprizeAbort('','') 
+*/
+
+/**
+	@name FlowFn.currentTaskId
+	@fn
+	@description 当前任务ID
+	@returns String
+	@example currentTaskId() 
+*/
+
+
+/**
+	@name FlowFn.suspend
+	@fn
+	@description 普通挂起
+	@param String bizRecId 案卷编号, String taskId 任务id, String reason 挂起原因
+	@returns boolean 
+	@example 
+*/
+
+/**
+	@name FlowFn.resume
+	@fn
+	@description 普通解挂
+	@param String bizRecId
+	@returns  boolean
+	@example resume（'C799E8DF07B0000120AAF8F0EB4063B0'） 
+*/
+
+
+/**
+	@name FlowFn.getCurrentAction
+	@fn
+	@description 获得当前操作 
+	@param  {String} 返回 Action的Name
+	@returns 
+	@example startProcessAction:流程启动，abortProcessAction：作废， suspendProcessAction：挂起， transferTaskAction：移交， finishProcessAction：办结 
+*/
+
+/**
+	@name FlowFn.advance
+	@fn
+	@description 流转
+	@param String taskId
+	@returns  boolean
+	@example advance('C799E8DF07B0000120AAF8F0EB4063B0')
+*/
+  
+/**
+	@name FlowFn.advanceToNext
+	@fn
+	@description 流转到下一环节
+	@param String taskId
+	@param Object executors 支持FID逗号拼串、 FID列表(List<String>) 、List<OrgUnit>(机构表达式计算结果)
+	@returns  boolean
+*/
+
+/**
+	@name FlowFn.abortFinish
+	@fn
+	@description 作废办结
+	@param String bizRecId 案卷编号
+	@param String reason 作废原因
+	@returns boolean
+	@example abortFinish（'C799E8DF07B0000120AAF8F0EB4063B0','原因'）
+*/
+
+/**
+	@name FlowFn.paperFinish
+	@fn
+	@description 纸制办结
+	@param String bizRecId 案卷编号, String reason 作废原因
+	@returns boolean
+	@example abortFinish（'C799E8DF07B0000120AAF8F0EB4063B0','原因'）
+*/
+
+/**
+	@name FlowFn.untreadFinish
+	@fn
+	@description 退会办结
+	@param String bizRecId 案卷编号, String reason 作废原因
+	@returns boolean
+	@example abortFinish（'C799E8DF07B0000120AAF8F0EB4063B0','原因'）
+*/
+
+/**
+	@name FlowFn.backToAct
+	@fn
+	@description 回退
+	@param String taskId , String act, String fids, String idea
+	@returns boolean
+*/
+
+/**
+	@name FlowFn.findFlowToActivityExecutorDeptName
+	@fn
+	@description 流转、转发、启动到部门名称
+	@param  String activity
+	@returns String 部门名称
+	@example findFlowToActivityExecutorDeptName（'act1'）
+*/
+
+/**
+	@name FlowFn.findFlowToActivityExecutorDeptID
+	@fn
+	@description 流转、转发、启动到部门ID
+	@param  String activity
+	@returns 部门ID
+	@example findFlowToActivityExecutorDeptID（'act1'）
+*/

@@ -1,0 +1,233 @@
+/**
+	@name CommonExFn
+	@class
+	@model BIZ
+	@description 通用函数(扩展)
+	@example
+	工作日函数定义，定义模块是“/base/core/logic/fn”，使用数据函数时，需要先引用（use或include）模块“/base/core/logic/fn”。
+*/
+
+/**
+	@name CommonExFn.sqlQuery
+	@fn
+	@description 查询sql
+	@param  String sql 查询语句, List<Object> params 语句参数
+	@returns list<Map<String, Object>> 结果集
+*/
+
+/**
+	@name CommonExFn.listCount
+	@fn
+	@description 查询集合大小
+	@param  List<Object> queryResult 集合
+	@returns Integer 大小
+*/
+
+/**
+	@name CommonExFn.tableNumData
+	@fn
+	@description 表字段求和
+	@param  String objectId 表名, String propName 字段名
+	@returns BigDecimal 和
+*/
+
+/**
+	@name CommonExFn.tableSumData
+	@fn
+	@description 表字段求和（多列）
+	@param  String objectId 表名,列,列....
+	@returns BigDecimal 和
+*/
+
+/**
+	@name CommonExFn.getQueryVal
+	@fn
+	@description 查询集合值
+	@param  List<Object> queryResult 集合, Integer rowIndex 索引, String fieldName 列名
+	@returns Object 值
+*/
+
+/**
+	@name CommonExFn.sqlFldValue
+	@fn
+	@description 查询sql第一个值
+	@param String sql 查询语句, List<Object> params 语句参数
+	@returns Object 值
+*/
+
+/**
+	@name CommonExFn.recFldValue
+	@fn
+	@description 含有案卷编号字段表取值
+	@param String tableId  含有案卷编号的表, String field  字段
+	@returns Object 值
+*/
+
+/**
+	@name CommonExFn.isFldsNull
+	@fn
+	@description 含有案卷编号字段表取值
+	@param String tableId  含有案卷编号的表, String fields  字段
+	@returns Boolean 为空返回true
+*/
+
+/**
+	@name CommonExFn.executeAction
+	@fn
+	@description 执行Action
+	@param String action 执行的Action, Map<String, Object> params Action的参数
+	@returns Boolean 只返回true
+*/
+
+/**
+	@name CommonExFn.dataVersionMng
+	@fn
+	@description 数据版本管理
+	@param List<String> srcTables, String srcBizRecId, List<String> trgTables, String trgBizRecId
+	@returns Boolean 
+*/
+
+/**
+	@name CommonExFn.getQueryValFields
+	@fn
+	@description 获取结果集的字段拼串
+	@param List<Object> queryResult  集合, String fieldName 列
+	@returns  String 拼串的记过
+*/
+
+/**
+	@name CommonExFn.startFlowEx
+	@fn
+	@description 启动流程扩展
+	@param String mainRecId, String bizRecId, String kind, String process, String activity, List<OrgUnit> executors
+	@returns  String 返回启动后的环节实例ID(ActivityInstance)
+*/
+
+/**
+	@name CommonExFn.startFlowEx
+	@fn
+	@description 启动流程扩展
+	@param String mainRecId, String bizRecId, String kind, String process, String activity, List<OrgUnit> executors
+	@returns  String 返回启动后的环节实例ID(ActivityInstance)
+*/
+
+/**
+	@name CommonExFn.isUnique
+	@fn
+	@description 唯一性验证
+	@param String tableName 表名, String colName 列名, String colValue 列值, String filter 其他过滤条件
+	@returns  boolean 为空返回true
+*/
+
+/**
+	@name CommonExFn.butoneSuspendProcess
+	@fn
+	@description 挂起指定taskID案卷(只支持普通挂起)
+	@param String taskID taskID, String fgqyy 挂起原因
+	@returns  boolean 成功返回true
+*/
+
+/**
+	@name CommonExFn.butoneResumeProcess
+	@fn
+	@description 激活指定taskID案卷(只支持普通挂起)
+	@param String taskID taskID
+	@returns  boolean 成功返回true
+*/
+
+/**
+	@name CommonExFn.getNextTaskExecutorsInfo
+	@fn
+	@description 获取流程执行后的执行者的信息
+	@returns  {Object}
+*/
+
+/**
+	@name CommonExFn.getNextTaskExecutorIDs
+	@fn
+	@description 获取流程执行后的执行者的personIDs
+	@returns  {Object}
+	@example getNextTaskExecutorIDs()
+*/
+
+/**
+	@name CommonExFn.getNextTaskExecutorsInfo
+	@fn
+	@description 获取流程执行后的执行者的personIDs
+	@returns  {Object}
+*/
+
+/**
+	@name CommonExFn.insertTask
+	@fn
+	@description 添加任务
+	@param String fBizRecId, String prveActID, String createActID, String executeActID, String name, List<String> executorFIDs
+	@returns  String 添加成功
+*/
+
+/**
+	@name CommonExFn.activeTask
+	@fn
+	@description 激活指定环节
+	@param String fBizRecId 案卷ID, String actID 环节ID, boolean requireBack 是否会退
+	@returns  String 激活成功
+*/
+
+/**
+	@name CommonExFn.containStr
+	@fn
+	@description 字符包含
+	@param {String} str 字符串
+	@param {String} cldStr 是否包含的字符串
+	@returns  boolean 包含返回true
+*/
+
+/**
+	@name CommonExFn.sumDecimalFromMap
+	@fn
+	@description Map合计
+	@param Map map, List<String> attrs
+	@returns  BigDecimal 
+*/
+
+/**
+	@name CommonExFn.insertTaskExecutor
+	@fn
+	@description 添加执行者
+	@param String parentTaskID, String sprocess, String sActivity, String actName, String cUrl, String eUrl,String fbizrecid, String executors, String flowID
+	@returns  String  激活成功
+*/
+
+/**
+	@name CommonExFn.activeTaskExecutor
+	@fn
+	@description 激活任务执行者
+	@param String taskid
+	@returns  String  激活成功
+*/
+
+/**
+	@name CommonExFn.isDataRepeat
+	@fn
+	@description 判断数据集中是否存在重复的数据,返回重复数据
+	@param Table tab 判断的数据集, String fields 字段，多个字段是用逗号隔开
+	@returns  List<String>  返回重复的数据集
+*/
+
+/**
+	@name CommonExFn.codeNameIdentical
+	@fn
+	@description 检查数据集的编码和名称是否一致
+	@param Table dictTab  数据字典的数据集  select 字典类型，字典编码，字典名称 from 字典表  where 字典类型 in(用到的数据集), Table dataTab 检查的数据集对象, String dictType 字典类型, String codeColumn 编码字段, String nameColumn 名称字段, String keyColumn 主键字段 
+	@returns  List<String>  返回主键值
+*/
+
+/**
+	@name CommonExFn.requireFileds
+	@fn
+	@description 判断数据集中必填字段是否为空,返回数据记录
+	@param Table tab 判断的数据集, String fields 字段 , String fieldsName 字段注释 
+	@returns  List<String>  返回为空的数据提示信息
+*/
+
+	 

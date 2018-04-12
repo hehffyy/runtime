@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<model xmlns="http://www.justep.com/model">  
+  <use>/system/logic/action</use>  
+  <use>/bdc/gwbl/data</use>  
+  <use>/base/core/flow/logic/action</use>
+  <use>/base/core/flow/ontology</use>
+  <use>/base/system/logic/action</use>
+  <use>/base/system/ontology</use>
+</model>

@@ -1,0 +1,82 @@
+/**
+	@name WorkDay
+	@class
+	@model BIZ
+	@description 工作日函数
+	@example
+	工作日函数定义，定义模块是“/base/core/logic/fn”，使用数据函数时，需要先引用（use或include）模块“/base/core/logic/fn”。
+*/
+
+/**
+	@name WorkDay.getDateAfterWorkDays
+	@fn
+	@description 得到days个工作日后的第一个工作日
+	@param  {Date|String} start 开始日期
+	@param	{Number} days 工作日数
+	@param	{Boolean} includeToDay 是否包含开始日期(默认为否)
+	@returns {Date}
+*/
+
+/**
+	@name WorkDay.getDateAfterNatureDays
+	@fn
+	@description 得到days个工作日后的第一个自然日
+	@param  {Date|String} start 开始日期
+	@param	{Number} days 工作日数
+	@param	{Boolean} includeToDay 是否包含开始日期(默认为否)
+	@returns {Date}
+*/
+
+/**
+	@name WorkDay.calcWorkDaysBetween
+	@function
+	@description 计算两个日期之间的工作日数
+	@param {Date} startDate 开始日期
+	@param {Date} endDate   结束日期 
+	@returns {Long}
+	@example 如果日期任意一个为空返回null
+*/
+
+/**
+	@name WorkDay.getLostWorkDays
+	@function
+	@description 计算消耗的工作日天数
+	@param {Date} startDate 开始日期
+	@param {Date} endDate   结束日期 
+	@param {Boolean} includeStart   包含开始日期
+	@param {Boolean} half   半天计时
+	@returns {Double}
+	@example 如果日期任意一个为空返回null
+*/	
+
+
+/**
+	@name WorkDay.getLostNatureDays
+	@function
+	@description 计算消耗的自然日天数
+	@param {Date} startDate 开始日期
+	@param {Date} endDate   结束日期 
+	@param {Boolean} includeStart   包含开始日期
+	@param {Boolean} half   半天计时
+	@returns {Double}
+	@example 如果日期任意一个为空返回null
+*/
+
+/**
+	@name WorkDay.toDateEx
+	@function
+	@description 将指定的值转换成Date
+	@param {Object} obj 指定的值
+	@returns {Date}
+	@example toDateEx("值")
+*/
+
+/**
+	@name WorkDay.toDateTimeEx
+	@function
+	@description 将指定的值转换成DateTime
+	@param {Object} obj 指定的值
+	@returns {DateTime}
+	@example toDateTimeEx("值")
+*/
+	

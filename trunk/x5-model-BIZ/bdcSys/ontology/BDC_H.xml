@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<tableConfig majorVer="1" minorVer="0" isQuery="true"
+	distinct="false">
+	HH,CH,HID,ZL,DYZT,DJZT,YGZT,YYZT,FZZT
+	<dataModel><![CDATA[]]>
+	</dataModel>
+	<select><![CDATA[select HH,CH,HID,ZL,'' RECID,0 DYZT,0 YGZT,0 YYZT,0 DJZT,0 FZZT,0 CFZT from tb_h where zrzid=:zrzid
+	order by ZRZID,lpad(CH,10,'0'),HH]]></select>
+	<from><![CDATA[]]>
+	</from>
+	<condition><![CDATA[]]>
+	</condition>
+	<orderBy><![CDATA[]]></orderBy>
+	<fieldAlias><![CDATA[]]>
+	</fieldAlias>
+	<fieldNames><![CDATA[]]>
+	</fieldNames>
+	<parameters />
+</tableConfig>

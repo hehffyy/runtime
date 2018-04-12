@@ -1,0 +1,36 @@
+/**
+	@name DocExFn.uploadDoc
+	@fn
+	@description 简易文档上传
+	@param {String} bizKey 业务主键（案卷编号）
+	@param {String} version 版本号 默认 -1
+	@param {String} kind 类型 默认-1
+	@param {String} stream  流 Blob字段
+	@returns {boolean}
+	@example 
+		uploadDoc("案卷编号","-1","-1",stream)
+*/	
+
+/**
+	@name DocExFn.genX5Attachs
+	@fn
+	@description X5上传文档
+	@param {String} baseUrl 业务主键（案卷编号）
+	@param {String} subPath 版本号
+	@param {String} files  List<Map<String,Object>> 文件流 Map包含URL FILENAME
+	@returns {boolean}
+	@example 
+		genX5Attachs("案卷编号","-1",stream)
+*/	
+
+/**
+	@name DocExFn.hasDraftInfo
+	@fn
+	@description 是否有拟稿信息
+	@param {String} bizKey 业务主键（案卷编号）不能为空
+	@param {String} kind 类型   不能为空 默认为"-1"
+	@param {String} parentVersion 父版本   不能为空 默认为"-1"
+	@returns {boolean}
+	@example 
+		hasDraftInfo("案卷编号","-1","-1")
+*/	

@@ -1,0 +1,92 @@
+/**
+	@name ImpExpExFn
+	@class
+	@model BIZ
+	@category fn
+	@description 导出导入扩展库
+	@example
+*/
+
+
+/**
+	@name ImpExpExFn.commonExcelExport
+	@fn
+	@description 通用Excel导出
+	@param {String} templateKey Office模板标识
+	@param {Map} sqlParam  sql参数
+	@param {Map} extendParam  扩展参数
+	@param {String} outFileType  输出文件类型 excel pdf
+	@returns {InputStream} 
+	@see 
+	@example 
+	示例:
+		commonExcelExport('huTemplate',newMap('bizRecID','xxxx'),null,'excel')
+	
+*/
+
+/**
+	@name ImpExpExFn.sheetByIndex
+	@fn
+	@description 根据索引获得Sheet
+	@param Object book, Integer index 索引
+	@returns Object
+*/
+
+/**
+	@name ImpExpExFn.excelRow
+	@fn
+	@description 获取excel某行对象
+	@param Object sheet, Integer row
+	@returns Object
+*/
+
+/**
+	@name ImpExpExFn.cellValue
+	@fn
+	@description 获取excel某单元格值
+	@param Object sheet sheet对象, Integer row 行, Integer col 列
+	@returns Object
+*/
+
+/**
+	@name ImpExpExFn.cellValue
+	@fn
+	@description 获取excel某单元格值
+	@param Object sheet sheet对象, Integer row 行, Integer col 列
+	@returns Object
+*/
+
+/**
+	@name ImpExpExFn.exportTxt
+	@fn
+	@description 导出txt
+	@param Object String content 导出内容, String charset 编码 UTF-8 GBK
+	@returns InputStream
+*/
+
+/**
+	@name ImpExpExFn.importFht
+	@fn
+	@description 导入房产分户图
+	@param String bizKey, InputStream stream
+	@returns String 路径
+*/
+
+/**
+	@name ImpExpExFn.simpleExcelExport
+	@fn
+	@description 简易Excel导出
+	@param String templateKey   模板标识, Object... params 参数
+	@returns InputStream
+	@example  simpleExcelExport('ysyj',null)
+*/
+
+
+/**
+	@name ImpExpExFn.impCadToTable
+	@fn
+	@description 导入cad坐标文件
+	@param Object _importFileStream, String dkTableId, String coordTableId
+	@returns InputStream
+*/
+

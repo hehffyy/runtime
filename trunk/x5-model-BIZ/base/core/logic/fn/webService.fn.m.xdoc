@@ -1,0 +1,55 @@
+/**
+	@name CallWebService
+	@class
+	@model BIZ
+	@description webService函数
+	@example
+	webService函数定义，定义模块是“/base/core/logic/fn”，使用数据函数时，需要先引用（use或include）模块“/base/core/logic/fn”。
+*/
+
+/**
+	@name CallWebService.invokeWebService
+	@fn
+	@description 调用webService
+	@param  {String} endpoint webservice地址
+	@param  {String} nameSpace webservice的命名空间
+	@param  {String} operationName 操作名称
+	@param  {List} paramKeys 参数名称
+	@param  {List} paramTypes 参数类型
+	@param  {List} paramValues 参数值
+	@returns {Object} 
+	@example invokeWebService('http://19.153.48.196/service1.asmx?wsdl','http://tempuri.org/',
+				'QueryDeveloperInfo',list('Code','Etype','ProvingID'),list('String','int','int'),list('值1','值2','值3'))
+*/
+
+/**
+	@name CallWebService.invokeWebService2
+	@fn
+	@description 调用webService
+	@param  {String} endpoint webservice地址
+	@param  {String} serviceName 服务名,wsdl的service节点的name属性
+	@param  {String} operationName 操作名称，wsdl的operation节点的name属性
+	@param  {List} paramKeys 参数名称
+	@param  {List} paramValues 参数值
+	@returns {Object}  
+	@example invokeWebService2('http://localhost:8080/BizService/services/Authenticate?wsdl,'Authenticate',
+				'login',list('user','password'),list('system','123456'))
+*/
+
+/**
+	@name CallWebService.invokeWebService3
+	@fn
+	@description 调用webService,增加options动态服务访问的参数。
+	@param  {String} endpoint webservice地址
+	@param  {String} serviceName 服务名,wsdl的service节点的name属性
+	@param  {String} operationName 操作名称，wsdl的operation节点的name属性
+	@param  {List} paramKeys 参数名称
+	@param  {List} paramValues 参数值
+	@returns {Object}  
+	@example invokeWebService3('http://localhost:8080/BizService/services/Authenticate?wsdl,'Authenticate',
+				'login',list('user','password'),list('system','123456'),newMap('useSOAPAction',true,'timeout',15000,'portName':'ServerPort_X'))
+			options说明：
+			useSOAPAction: 如果是.net发布的服务，需要增加选项useSOAPAction=true
+			timeout: 请求超时设置。如果服务耗时，请按最大时间设置，单位ms
+			portName:如果一个服务有多个实现(SOAP,SOPA12)时，可以指定采用哪个端口
+*/
